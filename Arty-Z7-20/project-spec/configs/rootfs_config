@@ -2666,7 +2666,7 @@ CONFIG_packagegroup-core-boot=y
 #
 # packagegroup-core-sdk 
 #
-# CONFIG_packagegroup-core-sdk is not set
+CONFIG_packagegroup-core-sdk=y
 # CONFIG_packagegroup-core-sdk-dbg is not set
 # CONFIG_packagegroup-core-sdk-dev is not set
 
@@ -2767,7 +2767,7 @@ CONFIG_packagegroup-core-ssh-dropbear=y
 #
 # packagegroup-petalinux-x11 
 #
-# CONFIG_packagegroup-petalinux-x11 is not set
+CONFIG_packagegroup-petalinux-x11=y
 # CONFIG_packagegroup-petalinux-x11-dbg is not set
 # CONFIG_packagegroup-petalinux-x11-dev is not set
 
