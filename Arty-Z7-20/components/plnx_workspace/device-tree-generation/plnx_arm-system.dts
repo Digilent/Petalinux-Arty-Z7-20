@@ -488,9 +488,11 @@
 			reg = <0x40000000 0x1000>;
 		};
 
-		PmodGYRO@40001000 {
+		PmodHYGRO@43c40000 {
 			compatible = "generic-uio";
-			reg = <0x40001000 0x1000 0x40010000 0x10000>;
+			interrupt-parent = <0x4>;
+			interrupts = <0x0 0x34 0x4>;
+			reg = <0x43c40000 0x10000 0x43c50000 0x10000>;
 		};
 
 		axi_dynclk@43c10000 {

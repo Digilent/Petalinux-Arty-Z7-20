@@ -57991,7 +57991,7 @@ c093b438 T __initramfs_start
 c093b438 t __irf_start
 c093b438 T __security_initcall_end
 c093b438 T __security_initcall_start
-c093b4be t __irf_end
+c093b4bd t __irf_end
 c093b4c0 T __initramfs_size
 c093c000 D __per_cpu_load
 c093c000 D __per_cpu_start

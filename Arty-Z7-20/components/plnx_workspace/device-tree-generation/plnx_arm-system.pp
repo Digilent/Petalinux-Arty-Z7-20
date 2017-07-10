@@ -1,7 +1,7 @@
-# 1 "/home/digilent/sam_work/git/sbobrowicz/Petalinux-Arty-Z7-20-SPI/Arty-Z7-20/build/../components/plnx_workspace/device-tree-generation/system-top.dts"
+# 1 "/home/digilent/sam_work/git/sbobrowicz/Petalinux-Arty-Z7-20-I2C/Arty-Z7-20/build/../components/plnx_workspace/device-tree-generation/system-top.dts"
 # 1 "<built-in>"
 # 1 "<command-line>"
-# 1 "/home/digilent/sam_work/git/sbobrowicz/Petalinux-Arty-Z7-20-SPI/Arty-Z7-20/build/../components/plnx_workspace/device-tree-generation/system-top.dts"
+# 1 "/home/digilent/sam_work/git/sbobrowicz/Petalinux-Arty-Z7-20-I2C/Arty-Z7-20/build/../components/plnx_workspace/device-tree-generation/system-top.dts"
 
 
 
@@ -32,7 +32,7 @@
  cpus {
  };
 };
-# 1 "/home/digilent/sam_work/git/sbobrowicz/Petalinux-Arty-Z7-20-SPI/Arty-Z7-20/build/tmp/work/plnx_arm-xilinx-linux-gnueabi/device-tree-generation/xilinx+gitAUTOINC+94fc615234-r0/system-user.dtsi" 1
+# 1 "/home/digilent/sam_work/git/sbobrowicz/Petalinux-Arty-Z7-20-I2C/Arty-Z7-20/build/tmp/work/plnx_arm-xilinx-linux-gnueabi/device-tree-generation/xilinx+gitAUTOINC+94fc615234-r0/system-user.dtsi" 1
 /include/ "system-conf.dtsi"
 / {
  model = "Zynq ARTY Z7 Development Board";
@@ -133,7 +133,7 @@
  compatible = "generic-uio";
 };
 
-&PmodGYRO_0 {
+&PmodHYGRO_0 {
  compatible = "generic-uio";
 };
-# 31 "/home/digilent/sam_work/git/sbobrowicz/Petalinux-Arty-Z7-20-SPI/Arty-Z7-20/build/../components/plnx_workspace/device-tree-generation/system-top.dts" 2
+# 31 "/home/digilent/sam_work/git/sbobrowicz/Petalinux-Arty-Z7-20-I2C/Arty-Z7-20/build/../components/plnx_workspace/device-tree-generation/system-top.dts" 2

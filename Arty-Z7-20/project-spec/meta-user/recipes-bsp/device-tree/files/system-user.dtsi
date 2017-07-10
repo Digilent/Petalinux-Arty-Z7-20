@@ -98,6 +98,6 @@
 	compatible = "generic-uio";
 };
 
-&PmodGYRO_0 {
+&PmodHYGRO_0 {
 	compatible = "generic-uio";
 };
