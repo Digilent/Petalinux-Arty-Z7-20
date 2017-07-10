@@ -15,7 +15,7 @@ src/image_mover.o src/image_mover.o: ../src/image_mover.c ../src/fsbl.h \
  ../../fsbl_bsp/ps7_cortexa9_0/include/xil_io.h \
  ../../fsbl_bsp/ps7_cortexa9_0/include/xstatus.h \
  ../../fsbl_bsp/ps7_cortexa9_0/include/xil_assert.h ../src/fsbl_debug.h \
- /home/digilent/sam_work/git/digilent/Petalinux-Arty-Z7-20/Arty-Z7-20/components/plnx_workspace/fsbl_hwproj/ps7_init.h \
+ /home/digilent/sam_work/git/sbobrowicz/Petalinux-Arty-Z7-20-SPI/Arty-Z7-20/components/plnx_workspace/fsbl_hwproj/ps7_init.h \
  ../src/image_mover.h \
  ../../fsbl_bsp/ps7_cortexa9_0/include/xreg_cortexa9.h \
  ../src/fsbl_hooks.h ../src/md5.h \
@@ -59,7 +59,7 @@ src/image_mover.o src/image_mover.o: ../src/image_mover.c ../src/fsbl.h \
 
 ../src/fsbl_debug.h:
 
-/home/digilent/sam_work/git/digilent/Petalinux-Arty-Z7-20/Arty-Z7-20/components/plnx_workspace/fsbl_hwproj/ps7_init.h:
+/home/digilent/sam_work/git/sbobrowicz/Petalinux-Arty-Z7-20-SPI/Arty-Z7-20/components/plnx_workspace/fsbl_hwproj/ps7_init.h:
 
 ../src/image_mover.h:
 

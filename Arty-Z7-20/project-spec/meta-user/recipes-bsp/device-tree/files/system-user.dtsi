@@ -9,6 +9,9 @@
 		ethernet0 = &gem0;
 		spi0 = &qspi;
 	};
+	chosen {
+		bootargs = "console=ttyPS0,115200 earlyprintk root=/dev/mmcblk0p2 rw rootwait uio_pdrv_genirq.of_id=generic-uio";
+	};
 
 	usb_phy0: usb_phy@0 {
 		compatible = "ulpi-phy";
@@ -90,3 +93,11 @@
 	port-number = <1>;
 };
 
+
+&PmodGPIO_0 {
+	compatible = "generic-uio";
+};
+
+&PmodGYRO_0 {
+	compatible = "generic-uio";
+};

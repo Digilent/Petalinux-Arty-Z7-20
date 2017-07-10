@@ -296,6 +296,18 @@
 #define XPAR_PS7_SLCR_0_S_AXI_HIGHADDR 0xF8000FFF
 
 
+/* Definitions for peripheral PMODGPIO_0 */
+#define XPAR_PMODGPIO_0_AXI_LITE_GPIO_BASEADDR 0x40000000
+#define XPAR_PMODGPIO_0_AXI_LITE_GPIO_HIGHADDR 0x40000FFF
+
+
+/* Definitions for peripheral PMODGYRO_0 */
+#define XPAR_PMODGYRO_0_AXI_LITE_GPIO_BASEADDR 0x40001000
+#define XPAR_PMODGYRO_0_AXI_LITE_GPIO_HIGHADDR 0x40001FFF
+#define XPAR_PMODGYRO_0_AXI_LITE_SPI_BASEADDR 0x40010000
+#define XPAR_PMODGYRO_0_AXI_LITE_SPI_HIGHADDR 0x4001FFFF
+
+
 /******************************************************************/
 
 /* Definitions for driver GPIO */

@@ -301,7 +301,7 @@
 			enet-reset = <0x5 0x9 0x0>;
 			phy-mode = "rgmii-id";
 			xlnx,ptp-enet-clock = <0x6750918>;
-			local-mac-address;
+			local-mac-address = [00 18 3e 0a c5 fa];
 			phy-handle = <0x6>;
 
 			ethernet-phy@0 {
@@ -482,6 +482,16 @@
 		#size-cells = <0x1>;
 		compatible = "simple-bus";
 		ranges;
+
+		PmodGPIO@40000000 {
+			compatible = "generic-uio";
+			reg = <0x40000000 0x1000>;
+		};
+
+		PmodGYRO@40001000 {
+			compatible = "generic-uio";
+			reg = <0x40001000 0x1000 0x40010000 0x10000>;
+		};
 
 		axi_dynclk@43c10000 {
 			compatible = "xlnx,axi-dynclk-1.0";
@@ -959,7 +969,7 @@
 	};
 
 	chosen {
-		bootargs = "console=ttyPS0,115200 earlyprintk";
+		bootargs = "console=ttyPS0,115200 earlyprintk root=/dev/mmcblk0p2 rw rootwait uio_pdrv_genirq.of_id=generic-uio";
 		stdout-path = "serial0:115200n8";
 	};
 

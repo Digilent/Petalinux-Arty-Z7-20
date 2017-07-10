@@ -1,7 +1,7 @@
-# 1 "/home/digilent/sam_work/git/digilent/Petalinux-Arty-Z7-20/Arty-Z7-20/build/../components/plnx_workspace/device-tree-generation/system-top.dts"
+# 1 "/home/digilent/sam_work/git/sbobrowicz/Petalinux-Arty-Z7-20-SPI/Arty-Z7-20/build/../components/plnx_workspace/device-tree-generation/system-top.dts"
 # 1 "<built-in>"
 # 1 "<command-line>"
-# 1 "/home/digilent/sam_work/git/digilent/Petalinux-Arty-Z7-20/Arty-Z7-20/build/../components/plnx_workspace/device-tree-generation/system-top.dts"
+# 1 "/home/digilent/sam_work/git/sbobrowicz/Petalinux-Arty-Z7-20-SPI/Arty-Z7-20/build/../components/plnx_workspace/device-tree-generation/system-top.dts"
 
 
 
@@ -32,7 +32,7 @@
  cpus {
  };
 };
-# 1 "/home/digilent/sam_work/git/digilent/Petalinux-Arty-Z7-20/Arty-Z7-20/build/tmp/work/plnx_arm-xilinx-linux-gnueabi/device-tree-generation/xilinx+gitAUTOINC+94fc615234-r0/system-user.dtsi" 1
+# 1 "/home/digilent/sam_work/git/sbobrowicz/Petalinux-Arty-Z7-20-SPI/Arty-Z7-20/build/tmp/work/plnx_arm-xilinx-linux-gnueabi/device-tree-generation/xilinx+gitAUTOINC+94fc615234-r0/system-user.dtsi" 1
 /include/ "system-conf.dtsi"
 / {
  model = "Zynq ARTY Z7 Development Board";
@@ -45,8 +45,7 @@
   spi0 = &qspi;
  };
  chosen {
-  bootargs = "console=ttyPS0,115200 earlyprintk";
-  stdout-path = "serial0:115200n8";
+  bootargs = "console=ttyPS0,115200 earlyprintk root=/dev/mmcblk0p2 rw rootwait uio_pdrv_genirq.of_id=generic-uio";
  };
 
  usb_phy0: usb_phy@0 {
@@ -128,4 +127,13 @@
 &uart1 {
  port-number = <1>;
 };
-# 31 "/home/digilent/sam_work/git/digilent/Petalinux-Arty-Z7-20/Arty-Z7-20/build/../components/plnx_workspace/device-tree-generation/system-top.dts" 2
+
+
+&PmodGPIO_0 {
+ compatible = "generic-uio";
+};
+
+&PmodGYRO_0 {
+ compatible = "generic-uio";
+};
+# 31 "/home/digilent/sam_work/git/sbobrowicz/Petalinux-Arty-Z7-20-SPI/Arty-Z7-20/build/../components/plnx_workspace/device-tree-generation/system-top.dts" 2
