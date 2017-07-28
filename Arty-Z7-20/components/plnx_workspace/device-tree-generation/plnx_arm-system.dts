@@ -121,6 +121,8 @@
 			#address-cells = <0x1>;
 			#size-cells = <0x0>;
 			clock-frequency = <0x61a80>;
+			linux,phandle = <0x9>;
+			phandle = <0x9>;
 		};
 
 		i2c@e0005000 {
@@ -483,23 +485,15 @@
 		compatible = "simple-bus";
 		ranges;
 
-		PmodGPIO@40000000 {
-			compatible = "generic-uio";
-			reg = <0x40000000 0x1000>;
-		};
-
-		PmodHYGRO@43c40000 {
-			compatible = "generic-uio";
-			interrupt-parent = <0x4>;
-			interrupts = <0x0 0x34 0x4>;
-			reg = <0x43c40000 0x10000 0x43c50000 0x10000>;
-		};
-
 		axi_dynclk@43c10000 {
-			compatible = "xlnx,axi-dynclk-1.0";
+			compatible = "digilent,axi-dynclk";
 			reg = <0x43c10000 0x10000>;
 			xlnx,s00-axi-addr-width = <0x5>;
 			xlnx,s00-axi-data-width = <0x20>;
+			#clock-cells = <0x0>;
+			clocks = <0x1 0xf>;
+			linux,phandle = <0xc>;
+			phandle = <0xc>;
 		};
 
 		gpio@41230000 {
@@ -608,7 +602,7 @@
 		gpio@41250000 {
 			#gpio-cells = <0x2>;
 			#interrupt-cells = <0x2>;
-			compatible = "xlnx,xps-gpio-1.00.a";
+			compatible = "generic-uio";
 			gpio-controller;
 			interrupt-controller;
 			interrupt-parent = <0x4>;
@@ -630,34 +624,51 @@
 
 		dma@43000000 {
 			#dma-cells = <0x1>;
-			clock-names = "s_axi_lite_aclk", "m_axi_mm2s_aclk", "m_axi_mm2s_aclk", "m_axi_s2mm_aclk", "m_axi_s2mm_aclk";
-			clocks = <0x1 0xf 0x1 0xf 0x1 0xf 0x1 0xf 0x1 0xf>;
+			clock-names = "s_axi_lite_aclk", "m_axi_mm2s_aclk", "m_axi_mm2s_aclk";
+			clocks = <0x1 0xf 0x1 0xf 0x1 0xf>;
 			compatible = "xlnx,axi-vdma-1.00.a";
 			interrupt-parent = <0x4>;
-			interrupts = <0x0 0x1e 0x4 0x0 0x24 0x4>;
+			interrupts = <0x0 0x1e 0x4>;
 			reg = <0x43000000 0x10000>;
 			xlnx,addrwidth = <0x20>;
 			xlnx,flush-fsync = <0x1>;
-			xlnx,num-fstores = <0x3>;
+			xlnx,num-fstores = <0x1>;
+			dma-ranges = <0x0 0x0 0x20000000>;
+			linux,phandle = <0xd>;
+			phandle = <0xd>;
 
 			dma-channel@43000000 {
 				compatible = "xlnx,axi-vdma-mm2s-channel";
 				interrupts = <0x0 0x1e 0x4>;
-				xlnx,datawidth = <0x20>;
+				xlnx,datawidth = <0x18>;
 				xlnx,device-id = <0x0>;
+				xlnx,include-dre;
 			};
+		};
 
-			dma-channel@43000030 {
+		dma@43010000 {
+			#dma-cells = <0x1>;
+			clock-names = "s_axi_lite_aclk", "m_axi_s2mm_aclk", "m_axi_s2mm_aclk";
+			clocks = <0x1 0xf 0x1 0xf 0x1 0xf>;
+			compatible = "generic-uio";
+			interrupt-parent = <0x4>;
+			interrupts = <0x0 0x24 0x4>;
+			reg = <0x43010000 0x10000>;
+			xlnx,addrwidth = <0x20>;
+			xlnx,flush-fsync = <0x1>;
+			xlnx,num-fstores = <0x1>;
+
+			dma-channel@43010030 {
 				compatible = "xlnx,axi-vdma-s2mm-channel";
 				interrupts = <0x0 0x24 0x4>;
-				xlnx,datawidth = <0x8>;
-				xlnx,device-id = <0x0>;
-				xlnx,genlock-mode;
+				xlnx,datawidth = <0x18>;
+				xlnx,device-id = <0x1>;
+				xlnx,include-dre;
 			};
 		};
 
 		v_tc@43c00000 {
-			compatible = "xlnx,v-tc-6.1";
+			compatible = "xlnx,v-tc-5.01.a";
 			interrupt-parent = <0x4>;
 			interrupts = <0x0 0x1f 0x4>;
 			reg = <0x43c00000 0x10000>;
@@ -746,10 +757,12 @@
 			xlnx,max-pixels = <0x1000>;
 			xlnx,num-fsyncs = <0x1>;
 			xlnx,sync-en = <0x0>;
+			linux,phandle = <0xa>;
+			phandle = <0xa>;
 		};
 
 		v_tc@43c30000 {
-			compatible = "xlnx,v-tc-6.1";
+			compatible = "generic-uio";
 			interrupt-parent = <0x4>;
 			interrupts = <0x0 0x22 0x4>;
 			reg = <0x43c30000 0x10000>;
@@ -968,10 +981,35 @@
 				};
 			};
 		};
+
+		digilent_encoder {
+			compatible = "digilent,drm-encoder";
+			digilent,fmax = <0x1adb0>;
+			digilent,edid-i2c = <0x9>;
+			linux,phandle = <0xb>;
+			phandle = <0xb>;
+		};
+
+		xilinx_drm {
+			compatible = "xlnx,drm";
+			xlnx,vtc = <0xa>;
+			xlnx,connector-type = "HDMIA";
+			xlnx,encoder-slave = <0xb>;
+			clocks = <0xc>;
+
+			planes {
+				xlnx,pixel-format = "rgb888";
+
+				plane0 {
+					dmas = <0xd 0x0>;
+					dma-names = "dma0";
+				};
+			};
+		};
 	};
 
 	chosen {
-		bootargs = "console=ttyPS0,115200 earlyprintk root=/dev/mmcblk0p2 rw rootwait uio_pdrv_genirq.of_id=generic-uio";
+		bootargs = "console=ttyPS0,115200 earlyprintk uio_pdrv_genirq.of_id=generic-uio quiet";
 		stdout-path = "serial0:115200n8";
 	};
 
@@ -988,6 +1026,10 @@
 		reg = <0x0 0x20000000>;
 	};
 
+	xlnk {
+		compatible = "xlnx,xlnk-1.0";
+	};
+
 	usb_phy@0 {
 		compatible = "ulpi-phy";
 		#phy-cells = <0x0>;
@@ -996,5 +1038,11 @@
 		drv-vbus;
 		linux,phandle = <0x8>;
 		phandle = <0x8>;
+	};
+
+	pwm@0 {
+		compatible = "pwm-gpio";
+		#pwm-cells = <0x3>;
+		pwm-gpios = <0x5 0x36 0x1 0x5 0x37 0x1 0x5 0x38 0x1 0x5 0x39 0x1 0x5 0x3a 0x1 0x5 0x3b 0x1>;
 	};
 };

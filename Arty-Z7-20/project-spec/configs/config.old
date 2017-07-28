@@ -18,11 +18,17 @@ CONFIG_SUBSYSTEM_COMPONENT_U__BOOT_NAME_REMOTE=y
 #
 # Remote u-boot settings
 #
-CONFIG_SUBSYSTEM_COMPONENT_U__BOOT_NAME_REMOTE_DOWNLOAD_PATH="git://github.com/sbobrowicz/u-boot-xlnx.git;protocol=https"
-CONFIG_SUBSYSTEM_COMPONENT_U__BOOT_NAME_REMOTE_REFERENCE="a8fdecb560d533c2bddfa92d5c4872dccf9a7a4e"
-CONFIG_SUBSYSTEM_COMPONENT_LINUX__KERNEL_NAME_LINUX__XLNX=y
+CONFIG_SUBSYSTEM_COMPONENT_U__BOOT_NAME_REMOTE_DOWNLOAD_PATH="git://github.com/digilent/u-boot-digilent.git;protocol=https"
+CONFIG_SUBSYSTEM_COMPONENT_U__BOOT_NAME_REMOTE_REFERENCE="47e24b32a80b2c0e1824e31537034d9e4b096e20"
+# CONFIG_SUBSYSTEM_COMPONENT_LINUX__KERNEL_NAME_LINUX__XLNX is not set
 # CONFIG_SUBSYSTEM_COMPONENT_LINUX__KERNEL_NAME_EXT__LOCAL__SRC is not set
-# CONFIG_SUBSYSTEM_COMPONENT_LINUX__KERNEL_NAME_REMOTE is not set
+CONFIG_SUBSYSTEM_COMPONENT_LINUX__KERNEL_NAME_REMOTE=y
+
+#
+# Remote linux-kernel settings
+#
+CONFIG_SUBSYSTEM_COMPONENT_LINUX__KERNEL_NAME_REMOTE_DOWNLOAD_PATH="git://github.com/digilent/linux-digilent.git;protocol=https"
+CONFIG_SUBSYSTEM_COMPONENT_LINUX__KERNEL_NAME_REMOTE_REFERENCE="df06bf092344aadd8108f6697c345ece25e14602"
 
 #
 # Auto Config Settings
@@ -211,7 +217,7 @@ CONFIG_SUBSYSTEM_MACHINE_NAME="template"
 #
 # TMPDIR Location
 #
-CONFIG_TMP_DIR_LOCATION="/home/digilent/sam_work/git/sbobrowicz/Petalinux-Arty-Z7-20-SPI/Arty-Z7-20/build/tmp"
+CONFIG_TMP_DIR_LOCATION="/home/digilent/sam_work/git/sbobrowicz/Petalinux-Arty-Z7-20/Arty-Z7-20/build/tmp"
 
 #
 # Parallel thread execution
@@ -242,7 +248,4 @@ CONFIG_YOCTO_NETWORK_SSTATE_FEEDS_URL="http://petalinux.xilinx.com/sswreleases/r
 # User Layers
 #
 CONFIG_USER_LAYER_0=""
-
-
-
 CONFIG_SUBSYSTEM_BOOTARGS_GENERATED="console=ttyPS0,115200 earlyprintk root=/dev/mmcblk0p2 rw rootwait"

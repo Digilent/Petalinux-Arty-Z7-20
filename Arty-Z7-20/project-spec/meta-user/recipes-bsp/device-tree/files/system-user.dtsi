@@ -1,16 +1,22 @@
 /include/ "system-conf.dtsi"
+#include <dt-bindings/gpio/gpio.h>
 / {
 	model = "Zynq ARTY Z7 Development Board";
 	compatible = "digilent,zynq-artyz7", "xlnx,zynq-7000";
+
+	xlnk {
+		compatible = "xlnx,xlnk-1.0";
+	};
+
+	chosen {
+		bootargs = "console=ttyPS0,115200 earlyprintk uio_pdrv_genirq.of_id=generic-uio quiet";
+	};
 
 	aliases {
 		serial0 = &uart0;
 		serial1 = &uart1;
 		ethernet0 = &gem0;
 		spi0 = &qspi;
-	};
-	chosen {
-		bootargs = "console=ttyPS0,115200 earlyprintk root=/dev/mmcblk0p2 rw rootwait uio_pdrv_genirq.of_id=generic-uio";
 	};
 
 	usb_phy0: usb_phy@0 {
@@ -20,6 +26,67 @@
 		view-port = <0x0170>;
 		drv-vbus;
 	};
+
+	pwm: pwm@0 {
+		compatible = "pwm-gpio";
+		#pwm-cells = <3>;
+		pwm-gpios =
+			<&gpio0 54 GPIO_ACTIVE_LOW>,
+			<&gpio0 55 GPIO_ACTIVE_LOW>,
+			<&gpio0 56 GPIO_ACTIVE_LOW>,
+			<&gpio0 57 GPIO_ACTIVE_LOW>,
+			<&gpio0 58 GPIO_ACTIVE_LOW>,
+			<&gpio0 59 GPIO_ACTIVE_LOW>;
+	};
+};
+
+&amba_pl {
+	encoder_0: digilent_encoder {
+		compatible = "digilent,drm-encoder";
+		digilent,fmax = <110000>;
+		digilent,edid-i2c = <&i2c0>;
+	};
+
+	xilinx_drm {
+		compatible = "xlnx,drm";
+		xlnx,vtc = <&v_tc_0>;
+		xlnx,connector-type = "HDMIA";
+		xlnx,encoder-slave = <&encoder_0>;
+		clocks = <&axi_dynclk_0>;
+		planes {
+			xlnx,pixel-format = "rgb888";
+			plane0 {
+				dmas = <&axi_vdma_0 0>;
+				dma-names = "dma0";
+			};
+		};
+	};
+};
+
+
+&axi_dynclk_0 {
+	compatible = "digilent,axi-dynclk";
+	#clock-cells = <0>;
+	clocks = <&clkc 15>;
+};
+
+&axi_vdma_0 {
+	dma-ranges = <0x00000000 0x00000000 0x20000000>;
+	xlnx,num-fstores = <0x1>;
+};
+
+&v_tc_0 {
+	compatible = "xlnx,v-tc-5.01.a";
+};
+
+&v_tc_1 {
+	compatible = "generic-uio";
+};
+&axi_vdma_1 {
+	compatible = "generic-uio";	
+};
+&axi_gpio_video {
+	compatible = "generic-uio";	
 };
 
 &qspi {
@@ -94,10 +161,3 @@
 };
 
 
-&PmodGPIO_0 {
-	compatible = "generic-uio";
-};
-
-&PmodHYGRO_0 {
-	compatible = "generic-uio";
-};

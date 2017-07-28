@@ -1,4 +1,15 @@
 
+
+
+
+
+
+
+
+
+
+
+
 DT_PADDING_SIZE = "0x1000"
 XSCTH_WS = "${TOPDIR}/../components/plnx_workspace"
 YAML_DT_BOARD_FLAGS = "{BOARD template }"

@@ -587,7 +587,7 @@ CONFIG_openssh-sftp-server=y
 #
 # bash-completion 
 #
-# CONFIG_bash-completion is not set
+CONFIG_bash-completion=y
 # CONFIG_bash-completion-dev is not set
 # CONFIG_bash-completion-extra is not set
 # CONFIG_bash-completion-dbg is not set
@@ -634,7 +634,7 @@ CONFIG_openssh-sftp-server=y
 #
 # grep 
 #
-# CONFIG_grep is not set
+CONFIG_grep=y
 # CONFIG_grep-dbg is not set
 # CONFIG_grep-dev is not set
 
@@ -2363,7 +2363,7 @@ CONFIG_run-postinsts=y
 #
 # gcc-runtime 
 #
-# CONFIG_libstdcPLUSPLUS is not set
+CONFIG_libstdcPLUSPLUS=y
 # CONFIG_libstdcPLUSPLUS-dev is not set
 
 #
@@ -2666,7 +2666,7 @@ CONFIG_packagegroup-core-boot=y
 #
 # packagegroup-core-sdk 
 #
-CONFIG_packagegroup-core-sdk=y
+# CONFIG_packagegroup-core-sdk is not set
 # CONFIG_packagegroup-core-sdk-dbg is not set
 # CONFIG_packagegroup-core-sdk-dev is not set
 
@@ -2767,7 +2767,7 @@ CONFIG_packagegroup-core-ssh-dropbear=y
 #
 # packagegroup-petalinux-x11 
 #
-CONFIG_packagegroup-petalinux-x11=y
+# CONFIG_packagegroup-petalinux-x11 is not set
 # CONFIG_packagegroup-petalinux-x11-dbg is not set
 # CONFIG_packagegroup-petalinux-x11-dev is not set
 
