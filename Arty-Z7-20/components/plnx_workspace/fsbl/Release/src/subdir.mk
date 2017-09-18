@@ -14,7 +14,7 @@ C_SRCS += \
 ../src/nand.c \
 ../src/nor.c \
 ../src/pcap.c \
-/home/digilent/sam_work/git/sbobrowicz/Petalinux-Arty-Z7-20/Arty-Z7-20/components/plnx_workspace/fsbl_hwproj/ps7_init.c \
+/home/mitchellorsucci/myRepos/Petalinux-Arty-Z7-20/Arty-Z7-20/components/plnx_workspace/fsbl_hwproj/ps7_init.c \
 ../src/qspi.c \
 ../src/rsa.c \
 ../src/sd.c 
@@ -57,21 +57,21 @@ C_DEPS += \
 src/%.o: ../src/%.S
 	@echo 'Building file: $<'
 	@echo 'Invoking: ARM v7 gcc compiler'
-	arm-none-eabi-gcc -Wall -O2 -I"/home/digilent/sam_work/git/sbobrowicz/Petalinux-Arty-Z7-20/Arty-Z7-20/components/plnx_workspace/fsbl_hwproj" -c -fmessage-length=0 -MT"$@" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../fsbl_bsp/ps7_cortexa9_0/include -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@)" -o "$@" "$<"
+	arm-none-eabi-gcc -Wall -O2 -I"/home/mitchellorsucci/myRepos/Petalinux-Arty-Z7-20/Arty-Z7-20/components/plnx_workspace/fsbl_hwproj" -c -fmessage-length=0 -MT"$@" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../fsbl_bsp/ps7_cortexa9_0/include -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@)" -o "$@" "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 
 src/%.o: ../src/%.c
 	@echo 'Building file: $<'
 	@echo 'Invoking: ARM v7 gcc compiler'
-	arm-none-eabi-gcc -Wall -O2 -I"/home/digilent/sam_work/git/sbobrowicz/Petalinux-Arty-Z7-20/Arty-Z7-20/components/plnx_workspace/fsbl_hwproj" -c -fmessage-length=0 -MT"$@" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../fsbl_bsp/ps7_cortexa9_0/include -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@)" -o "$@" "$<"
+	arm-none-eabi-gcc -Wall -O2 -I"/home/mitchellorsucci/myRepos/Petalinux-Arty-Z7-20/Arty-Z7-20/components/plnx_workspace/fsbl_hwproj" -c -fmessage-length=0 -MT"$@" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../fsbl_bsp/ps7_cortexa9_0/include -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@)" -o "$@" "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 
-src/ps7_init.o: /home/digilent/sam_work/git/sbobrowicz/Petalinux-Arty-Z7-20/Arty-Z7-20/components/plnx_workspace/fsbl_hwproj/ps7_init.c
+src/ps7_init.o: /home/mitchellorsucci/myRepos/Petalinux-Arty-Z7-20/Arty-Z7-20/components/plnx_workspace/fsbl_hwproj/ps7_init.c
 	@echo 'Building file: $<'
 	@echo 'Invoking: ARM v7 gcc compiler'
-	arm-none-eabi-gcc -Wall -O2 -I"/home/digilent/sam_work/git/sbobrowicz/Petalinux-Arty-Z7-20/Arty-Z7-20/components/plnx_workspace/fsbl_hwproj" -c -fmessage-length=0 -MT"$@" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../fsbl_bsp/ps7_cortexa9_0/include -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@)" -o "$@" "$<"
+	arm-none-eabi-gcc -Wall -O2 -I"/home/mitchellorsucci/myRepos/Petalinux-Arty-Z7-20/Arty-Z7-20/components/plnx_workspace/fsbl_hwproj" -c -fmessage-length=0 -MT"$@" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../fsbl_bsp/ps7_cortexa9_0/include -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@)" -o "$@" "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 

@@ -2398,7 +2398,7 @@ CONFIG_libstdcPLUSPLUS=y
 #
 # glib-2.0 
 #
-# CONFIG_glib-2.0 is not set
+CONFIG_glib-2.0=y
 # CONFIG_glib-2.0-codegen is not set
 # CONFIG_glib-2.0-utils is not set
 # CONFIG_glib-2.0-dbg is not set
@@ -2408,7 +2408,7 @@ CONFIG_libstdcPLUSPLUS=y
 #
 # glibc 
 #
-# CONFIG_ldd is not set
+CONFIG_ldd=y
 
 #
 # gnome-desktop-testing 
@@ -4212,7 +4212,9 @@ CONFIG_bridge-utils=y
 # apps 
 #
 # CONFIG_gpio-demo is not set
+CONFIG_libvrcDemo=y
 # CONFIG_peekpoke is not set
+CONFIG_scripts=y
 
 #
 # user packages 

@@ -1,2 +1,2 @@
-com.xilinx.sdk.sw.prefs.repos.local=/opt/pkg/petalinux/tools/hsm/data/embeddedsw\:
+com.xilinx.sdk.sw.prefs.repos.local=/home/mitchellorsucci/Xilinx/plnx/tools/hsm/data/embeddedsw\:/opt/pkg/petalinux/tools/hsm/data/embeddedsw\:
 eclipse.preferences.version=1

@@ -15,7 +15,7 @@ src/main.o src/main.o: ../src/main.c ../src/fsbl.h \
  ../../fsbl_bsp/ps7_cortexa9_0/include/xil_io.h \
  ../../fsbl_bsp/ps7_cortexa9_0/include/xstatus.h \
  ../../fsbl_bsp/ps7_cortexa9_0/include/xil_assert.h ../src/fsbl_debug.h \
- /home/digilent/sam_work/git/sbobrowicz/Petalinux-Arty-Z7-20/Arty-Z7-20/components/plnx_workspace/fsbl_hwproj/ps7_init.h \
+ /home/mitchellorsucci/myRepos/Petalinux-Arty-Z7-20/Arty-Z7-20/components/plnx_workspace/fsbl_hwproj/ps7_init.h \
  ../src/qspi.h ../src/nand.h ../src/nor.h ../src/sd.h \
  ../src/image_mover.h ../../fsbl_bsp/ps7_cortexa9_0/include/xil_cache.h \
  ../../fsbl_bsp/ps7_cortexa9_0/include/xil_exception.h \
@@ -61,7 +61,7 @@ src/main.o src/main.o: ../src/main.c ../src/fsbl.h \
 
 ../src/fsbl_debug.h:
 
-/home/digilent/sam_work/git/sbobrowicz/Petalinux-Arty-Z7-20/Arty-Z7-20/components/plnx_workspace/fsbl_hwproj/ps7_init.h:
+/home/mitchellorsucci/myRepos/Petalinux-Arty-Z7-20/Arty-Z7-20/components/plnx_workspace/fsbl_hwproj/ps7_init.h:
 
 ../src/qspi.h:
 
