@@ -1,4 +1,4 @@
-#include "libvrc.h"
+#include <libvrc.h>
 /*
  *  Allocates space for a 'drm_control' struct and returns a pointer to it
  *  Sets the CRTC to the resolution requested

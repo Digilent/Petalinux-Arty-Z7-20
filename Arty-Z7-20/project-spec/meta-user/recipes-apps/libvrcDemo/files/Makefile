@@ -1,14 +1,24 @@
-APP = libvrcDemo
 
-# Add any other object files to this list below
-APP_OBJS = drmdemo.c libvrc.h libvrc.c
-
-all: build
-
-build: $(APP)
-
-$(APP): $(APP_OBJS)
-	$(CC) $(LDFLAGS) -o $@ $(APP_OBJS) $(LDLIBS)
-
+APP = libvrc
+ 
+LIBSOURCES=*.c
+OUTS = *.o
+NAME := vrc
+MAJOR = 1.0
+MINOR = 1
+VERSION = $(MAJOR).$(MINOR)
+ 
+all: lib$(NAME).so
+lib$(NAME).so.$(VERSION): $(OUTS)
+	$(CC) $(LDFLAGS) $(OUTS) -shared -Wl,-soname,lib$(NAME).so.$(MAJOR) -o lib$(NAME).so.$(VERSION)
+ 
+lib$(NAME).so: lib$(NAME).so.$(VERSION)
+	rm -f lib$(NAME).so.$(MAJOR) lib$(NAME).so
+	ln -s lib$(NAME).so.$(VERSION) lib$(NAME).so.$(MAJOR)
+	ln -s lib$(NAME).so.$(MAJOR) lib$(NAME).so
+ 
+%.o: %.c
+	$(CC) $(CFLAGS) -c -fPIC $(LIBSOURCES) -isystem ./.
+ 
 clean:
-	rm -f $(APP) *.0 *~
+	rm -rf *.o *.so *.so.*

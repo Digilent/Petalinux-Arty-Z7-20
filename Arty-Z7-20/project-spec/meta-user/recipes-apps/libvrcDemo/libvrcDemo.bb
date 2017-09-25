@@ -3,11 +3,11 @@
 #
 
 SUMMARY = "Simple libvrcDemo application"
-SECTION = "PETALINUX/apps"
+SECTION = "libs"
 LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/MIT;md5=0835ade698e0bcf8506ecda2f7b4f302"
 
-FILES_${PN} += "/usr/*"
+FILESEXTRAPATHS_prepend := "${THISDIR}/files:"
 
 SRC_URI = "file://drmdemo.c \
 	   file://Makefile \
@@ -15,13 +15,28 @@ SRC_URI = "file://drmdemo.c \
 	file://libvrc.h \
 		  "
 
+
 S = "${WORKDIR}"
 
-do_compile() {
-	     oe_runmake
-}
+PACKAGE_ARCH = "${MACHINE_ARCH}"
+PROVIDES = "vrc"
+TARGET_CC_ARCH += "${LDFLAGS}"
+
 
 do_install() {
-	     install -d ${D}${bindir}
-	     install -m 0755 libvrcDemo ${D}${bindir}
+
+	    install -d ${D}${includedir}
+		install -d ${D}${libdir}
+		oe_libinstall -so libvrc ${D}${libdir}
+
+
+	    install -d -m 0655 ${D}${includedir}
+	   	install -m 0644 ${S}/libvrc.h ${D}${includedir}
+
+#	   	${CC} ${CFLAGS} -lvrc drmdemo.c -o libvrcDemo
+#	   	install -m 0755 libvrcDemo ${D}${bindir}
 }
+
+
+FILES_${PN} = "${libdir}/*.so.* ${includedir}/*"
+FILES_${PN}-dev = "${libdir}/*.so"

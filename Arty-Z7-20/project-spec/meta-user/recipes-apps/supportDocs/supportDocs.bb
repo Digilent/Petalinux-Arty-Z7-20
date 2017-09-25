@@ -21,8 +21,6 @@ SRC_URI = "file://ArtyHW.dtbo \
 	file://artyz7demo.c \
 	file://gpio-fpga-driver.c \
 	file://gpio-fpga.h \
-	file://libvrc.h \
-	file://libvrc.so \
 	file://oled2.bit \
 	file://pwm-fpga-driver.c \
 	file://pwm-fpga.h \
@@ -44,7 +42,6 @@ SRC_URI = "file://ArtyHW.dtbo \
 	file://uioLibraryDocs/pwm-fpga.h \
 	file://uioLibraryDocs/uio-user.c \
 	file://uioLibraryDocs/uio-user.h \
-	file://drmdemo.c \
 	"
 
 S = "${WORKDIR}"
@@ -53,8 +50,6 @@ do_install() {
 	install -d ${D}/home/root
 	install -d ${D}/home/root/uioLibraryDocs
 	install -d ${D}/home/root/ArtyZ720lib
-	install -d ${D}/usr/include
-	install -d ${D}/usr/lib
 	install -d ${D}/lib
 	install -d ${D}/lib/firmware
 	
@@ -68,8 +63,6 @@ do_install() {
 	install -m 0755 ${S}/uio-user.c ${D}/home/root/ArtyZ720lib
 	install -m 0755 ${S}/uio-user.h ${D}/home/root/ArtyZ720lib
 
-	install -m 0755 ${S}/drmdemo.c ${D}/home/root/ArtyZ720lib
-
 	install -m 0755 ${S}/uioLibraryDocs/* ${D}/home/root/uioLibraryDocs
 	
 	install -m 0755 ${S}/ArtyI2Covr.bit ${D}/lib/firmware
@@ -79,8 +72,5 @@ do_install() {
 	install -m 0755 ${S}/ArtySPIovr.dtbo ${D}/lib/firmware
 	install -m 0755 ${S}/spichild.dtbo ${D}/lib/firmware
 	install -m 0755 ${S}/oled2.bit ${D}/lib/firmware
-	
-	install -m 0755 ${S}/libvrc.h ${D}/usr/include
-	install -m 0755 ${S}/libvrc.so ${D}/usr/lib
-	install -m 0755 ${S}/libvrc.h ${D}/lib
+
 }
