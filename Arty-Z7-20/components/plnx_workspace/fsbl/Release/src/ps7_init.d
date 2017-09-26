@@ -1,6 +1,6 @@
 src/ps7_init.o src/ps7_init.o: \
- /home/mitchellorsucci/myRepos/Petalinux-Arty-Z7-20/Arty-Z7-20/components/plnx_workspace/fsbl_hwproj/ps7_init.c \
- /home/mitchellorsucci/myRepos/Petalinux-Arty-Z7-20/Arty-Z7-20/components/plnx_workspace/fsbl_hwproj/ps7_init.h \
+ /home/digilent/work/git/Petalinux-Arty-Z7-20/Arty-Z7-20/components/plnx_workspace/fsbl_hwproj/ps7_init.c \
+ /home/digilent/work/git/Petalinux-Arty-Z7-20/Arty-Z7-20/components/plnx_workspace/fsbl_hwproj/ps7_init.h \
  ../../fsbl_bsp/ps7_cortexa9_0/include/xil_io.h \
  ../../fsbl_bsp/ps7_cortexa9_0/include/xil_types.h \
  ../../fsbl_bsp/ps7_cortexa9_0/include/xil_printf.h \
@@ -10,7 +10,7 @@ src/ps7_init.o src/ps7_init.o: \
  ../../fsbl_bsp/ps7_cortexa9_0/include/xreg_cortexa9.h \
  ../../fsbl_bsp/ps7_cortexa9_0/include/xpseudo_asm_gcc.h
 
-/home/mitchellorsucci/myRepos/Petalinux-Arty-Z7-20/Arty-Z7-20/components/plnx_workspace/fsbl_hwproj/ps7_init.h:
+/home/digilent/work/git/Petalinux-Arty-Z7-20/Arty-Z7-20/components/plnx_workspace/fsbl_hwproj/ps7_init.h:
 
 ../../fsbl_bsp/ps7_cortexa9_0/include/xil_io.h:
 

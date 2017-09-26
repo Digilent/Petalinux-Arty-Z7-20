@@ -1,7 +1,7 @@
-# 1 "/home/mitchellorsucci/myRepos/Petalinux-Arty-Z7-20/Arty-Z7-20/build/../components/plnx_workspace/device-tree-generation/system-top.dts"
+# 1 "/home/digilent/work/git/Petalinux-Arty-Z7-20/Arty-Z7-20/build/../components/plnx_workspace/device-tree-generation/system-top.dts"
 # 1 "<built-in>"
 # 1 "<command-line>"
-# 1 "/home/mitchellorsucci/myRepos/Petalinux-Arty-Z7-20/Arty-Z7-20/build/../components/plnx_workspace/device-tree-generation/system-top.dts"
+# 1 "/home/digilent/work/git/Petalinux-Arty-Z7-20/Arty-Z7-20/build/../components/plnx_workspace/device-tree-generation/system-top.dts"
 
 
 
@@ -20,8 +20,8 @@
  };
  aliases {
   ethernet0 = &gem0;
-  serial0 = &uart1;
-  serial1 = &uart0;
+  serial0 = &uart0;
+  serial1 = &uart1;
   spi0 = &qspi;
   spi1 = &spi0;
  };
@@ -32,27 +32,17 @@
  cpus {
  };
 };
-# 1 "/home/mitchellorsucci/myRepos/Petalinux-Arty-Z7-20/Arty-Z7-20/build/tmp/work/plnx_arm-xilinx-linux-gnueabi/device-tree-generation/xilinx+gitAUTOINC+94fc615234-r0/system-user.dtsi" 1
+# 1 "/home/digilent/work/git/Petalinux-Arty-Z7-20/Arty-Z7-20/build/tmp/work/plnx_arm-xilinx-linux-gnueabi/device-tree-generation/xilinx+gitAUTOINC+43551819a1-r0/system-user.dtsi" 1
 /include/ "system-conf.dtsi"
-# 1 "/home/mitchellorsucci/myRepos/Petalinux-Arty-Z7-20/Arty-Z7-20/build/tmp/work-shared/plnx_arm/kernel-source/include/dt-bindings/gpio/gpio.h" 1
-# 3 "/home/mitchellorsucci/myRepos/Petalinux-Arty-Z7-20/Arty-Z7-20/build/tmp/work/plnx_arm-xilinx-linux-gnueabi/device-tree-generation/xilinx+gitAUTOINC+94fc615234-r0/system-user.dtsi" 2
+# 1 "/home/digilent/work/git/Petalinux-Arty-Z7-20/Arty-Z7-20/build/tmp/work-shared/plnx_arm/kernel-source/include/dt-bindings/gpio/gpio.h" 1
+# 3 "/home/digilent/work/git/Petalinux-Arty-Z7-20/Arty-Z7-20/build/tmp/work/plnx_arm-xilinx-linux-gnueabi/device-tree-generation/xilinx+gitAUTOINC+43551819a1-r0/system-user.dtsi" 2
 / {
- model = "Zynq ARTY Z7 Development Board";
+ model = "Zynq Arty Z7 Development Board";
  compatible = "digilent,zynq-artyz7", "xlnx,zynq-7000";
 
- xlnk {
-  compatible = "xlnx,xlnk-1.0";
- };
-
  chosen {
-  bootargs = "console=ttyPS0,115200 earlyprintk uio_pdrv_genirq.of_id=generic-uio quiet root=/dev/mmcblk0p2 rw rootwait";
- };
 
- aliases {
-  serial0 = &uart0;
-  serial1 = &uart1;
-  ethernet0 = &gem0;
-  spi0 = &qspi;
+  bootargs = "console=ttyPS0,115200 earlyprintk uio_pdrv_genirq.of_id=generic-uio";
  };
 
  usb_phy0: usb_phy@0 {
@@ -130,7 +120,7 @@
 };
 
 &flash0 {
- compatible = "micron,m25p80", "s25fl128s";
+ compatible = "s25fl128s";
 };
 
 &gem0 {
@@ -189,10 +179,5 @@
 
 &uart0 {
  u-boot,dm-pre-reloc;
- port-number = <0>;
 };
-
-&uart1 {
- port-number = <1>;
-};
-# 31 "/home/mitchellorsucci/myRepos/Petalinux-Arty-Z7-20/Arty-Z7-20/build/../components/plnx_workspace/device-tree-generation/system-top.dts" 2
+# 31 "/home/digilent/work/git/Petalinux-Arty-Z7-20/Arty-Z7-20/build/../components/plnx_workspace/device-tree-generation/system-top.dts" 2

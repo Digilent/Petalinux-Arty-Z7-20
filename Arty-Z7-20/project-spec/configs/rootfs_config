@@ -2342,14 +2342,14 @@ CONFIG_run-postinsts=y
 #
 # fbset 
 #
-CONFIG_fbset=y
+# CONFIG_fbset is not set
 # CONFIG_fbset-dbg is not set
 # CONFIG_fbset-dev is not set
 
 #
 # fbset-modes 
 #
-CONFIG_fbset-modes=y
+# CONFIG_fbset-modes is not set
 # CONFIG_fbset-modes-dev is not set
 # CONFIG_fbset-modes-dbg is not set
 
@@ -2746,7 +2746,7 @@ CONFIG_packagegroup-core-ssh-dropbear=y
 #
 # packagegroup-petalinux-opencv 
 #
-CONFIG_packagegroup-petalinux-opencv=y
+# CONFIG_packagegroup-petalinux-opencv is not set
 # CONFIG_packagegroup-petalinux-opencv-dbg is not set
 # CONFIG_packagegroup-petalinux-opencv-dev is not set
 
@@ -4211,16 +4211,12 @@ CONFIG_bridge-utils=y
 #
 # apps 
 #
-CONFIG_executable=y
 # CONFIG_gpio-demo is not set
-CONFIG_libvrcDemo=y
 # CONFIG_peekpoke is not set
-CONFIG_supportDocs=y
 
 #
 # user packages 
 #
-# CONFIG_scripts is not set
 
 #
 # PetaLinux RootFS Settings

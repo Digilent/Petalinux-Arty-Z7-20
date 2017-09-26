@@ -5,7 +5,7 @@
 BEGIN OS
  PARAMETER OS_NAME = device_tree
  PARAMETER PROC_INSTANCE = ps7_cortexa9_0
- PARAMETER console_device = ps7_uart_1
+ PARAMETER console_device = ps7_uart_0
  PARAMETER main_memory = ps7_ddr_0
  PARAMETER periph_type_overrides = {BOARD template }
 END

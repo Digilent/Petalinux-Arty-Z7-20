@@ -1,22 +1,11 @@
 /include/ "system-conf.dtsi"
 #include <dt-bindings/gpio/gpio.h>
 / {
-	model = "Zynq ARTY Z7 Development Board";
+	model = "Zynq Arty Z7 Development Board";
 	compatible = "digilent,zynq-artyz7", "xlnx,zynq-7000";
 
-	xlnk {
-		compatible = "xlnx,xlnk-1.0";
-	};
-
 	chosen {
-		bootargs = "console=ttyPS0,115200 earlyprintk uio_pdrv_genirq.of_id=generic-uio quiet root=/dev/mmcblk0p2 rw rootwait";
-	};
-
-	aliases {
-		serial0 = &uart0;
-		serial1 = &uart1;
-		ethernet0 = &gem0;
-		spi0 = &qspi;
+		bootargs = "console=ttyPS0,115200 earlyprintk uio_pdrv_genirq.of_id=generic-uio";
 	};
 
 	usb_phy0: usb_phy@0 {
@@ -94,7 +83,7 @@
 };
 
 &flash0 {
-	compatible = "micron,m25p80", "s25fl128s";
+	compatible = "s25fl128s";
 };
 
 &gem0 {
@@ -153,11 +142,6 @@
 
 &uart0 {
 	u-boot,dm-pre-reloc;
-	port-number = <0>;	
-};
-
-&uart1 {
-	port-number = <1>;
 };
 
 

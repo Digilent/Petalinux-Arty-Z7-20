@@ -4,7 +4,7 @@
 	#address-cells = <0x1>;
 	#size-cells = <0x1>;
 	compatible = "digilent,zynq-artyz7", "xlnx,zynq-7000";
-	model = "Zynq ARTY Z7 Development Board";
+	model = "Zynq Arty Z7 Development Board";
 
 	cpus {
 		#address-cells = <0x1>;
@@ -234,7 +234,7 @@
 			u-boot,dm-pre-reloc;
 
 			flash@0 {
-				compatible = "micron,m25p80", "s25fl128s";
+				compatible = "s25fl128s";
 				reg = <0x0>;
 				#address-cells = <0x1>;
 				#size-cells = <0x1>;
@@ -1009,7 +1009,7 @@
 	};
 
 	chosen {
-		bootargs = "console=ttyPS0,115200 earlyprintk uio_pdrv_genirq.of_id=generic-uio quiet root=/dev/mmcblk0p2 rw rootwait";
+		bootargs = "console=ttyPS0,115200 earlyprintk uio_pdrv_genirq.of_id=generic-uio";
 		stdout-path = "serial0:115200n8";
 	};
 
@@ -1024,10 +1024,6 @@
 	memory {
 		device_type = "memory";
 		reg = <0x0 0x20000000>;
-	};
-
-	xlnk {
-		compatible = "xlnx,xlnk-1.0";
 	};
 
 	usb_phy@0 {
