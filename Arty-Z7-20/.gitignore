@@ -9,3 +9,5 @@ images/
 *.log
 BOOT.BIN
 
+!pre-built/linux/images
+!project-spec/meta-user/recipes-core/images

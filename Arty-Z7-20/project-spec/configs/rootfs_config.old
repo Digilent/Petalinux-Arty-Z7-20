@@ -4222,4 +4222,3 @@ CONFIG_bridge-utils=y
 # PetaLinux RootFS Settings
 #
 CONFIG_ROOTFS_ROOT_PASSWD="root"
-CONFIG_samplevrc=y
