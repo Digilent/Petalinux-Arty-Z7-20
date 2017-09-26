@@ -7,8 +7,5 @@ images/
 *.o
 *.jou
 *.log
-
-!pre-built/**
-pre-built/linux/images/rootfs.ext4
-pre-built/linux/images/linux/
+BOOT.BIN
 
