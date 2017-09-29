@@ -148,7 +148,7 @@
 	CONSOLE_ARG \ 
 	PSSERIAL0 \ 
 	"nc=setenv stdout nc;setenv stdin nc;\0" \ 
-	"ethaddr=00:18:3e:0a:c5:fa\0" \
+	"ethaddr=\0" \
 	"importbootenv=echo \"Importing environment from SD ...\"; " \ 
 		"env import -t ${loadbootenv_addr} $filesize\0" \ 
 	"loadbootenv=load mmc $sdbootdev:$partid ${loadbootenv_addr} ${bootenv}\0" \ 

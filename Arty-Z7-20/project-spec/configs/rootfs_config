@@ -4211,11 +4211,9 @@ CONFIG_bridge-utils=y
 #
 # apps 
 #
-CONFIG_executable=y
 # CONFIG_gpio-demo is not set
 # CONFIG_peekpoke is not set
-CONFIG_samplevrc=y
-CONFIG_supportDocs=y
+# CONFIG_samplevrc is not set
 
 #
 # user packages 

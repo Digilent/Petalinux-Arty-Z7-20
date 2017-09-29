@@ -325,9 +325,9 @@ unsigned long ps7_clock_init_data_3_0[] = {
     // .. CLKACT0 = 0x1
     // .. ==> 0XF8000154[0:0] = 0x00000001U
     // ..     ==> MASK : 0x00000001U    VAL : 0x00000001U
-    // .. CLKACT1 = 0x1
-    // .. ==> 0XF8000154[1:1] = 0x00000001U
-    // ..     ==> MASK : 0x00000002U    VAL : 0x00000002U
+    // .. CLKACT1 = 0x0
+    // .. ==> 0XF8000154[1:1] = 0x00000000U
+    // ..     ==> MASK : 0x00000002U    VAL : 0x00000000U
     // .. SRCSEL = 0x0
     // .. ==> 0XF8000154[5:4] = 0x00000000U
     // ..     ==> MASK : 0x00000030U    VAL : 0x00000000U
@@ -335,7 +335,7 @@ unsigned long ps7_clock_init_data_3_0[] = {
     // .. ==> 0XF8000154[13:8] = 0x0000000AU
     // ..     ==> MASK : 0x00003F00U    VAL : 0x00000A00U
     // .. 
-    EMIT_MASKWRITE(0XF8000154, 0x00003F33U ,0x00000A03U),
+    EMIT_MASKWRITE(0XF8000154, 0x00003F33U ,0x00000A01U),
     // .. CLKACT0 = 0x1
     // .. ==> 0XF8000158[0:0] = 0x00000001U
     // ..     ==> MASK : 0x00000001U    VAL : 0x00000001U
@@ -385,17 +385,17 @@ unsigned long ps7_clock_init_data_3_0[] = {
     // .. ..     ==> MASK : 0x03F00000U    VAL : 0x00100000U
     // .. .. 
     EMIT_MASKWRITE(0XF8000180, 0x03F03F30U ,0x00100B20U),
-    // .. .. SRCSEL = 0x0
-    // .. .. ==> 0XF8000190[5:4] = 0x00000000U
-    // .. ..     ==> MASK : 0x00000030U    VAL : 0x00000000U
-    // .. .. DIVISOR0 = 0xd
-    // .. .. ==> 0XF8000190[13:8] = 0x0000000DU
-    // .. ..     ==> MASK : 0x00003F00U    VAL : 0x00000D00U
-    // .. .. DIVISOR1 = 0x1
-    // .. .. ==> 0XF8000190[25:20] = 0x00000001U
-    // .. ..     ==> MASK : 0x03F00000U    VAL : 0x00100000U
+    // .. .. SRCSEL = 0x3
+    // .. .. ==> 0XF8000190[5:4] = 0x00000003U
+    // .. ..     ==> MASK : 0x00000030U    VAL : 0x00000030U
+    // .. .. DIVISOR0 = 0x7
+    // .. .. ==> 0XF8000190[13:8] = 0x00000007U
+    // .. ..     ==> MASK : 0x00003F00U    VAL : 0x00000700U
+    // .. .. DIVISOR1 = 0x2
+    // .. .. ==> 0XF8000190[25:20] = 0x00000002U
+    // .. ..     ==> MASK : 0x03F00000U    VAL : 0x00200000U
     // .. .. 
-    EMIT_MASKWRITE(0XF8000190, 0x03F03F30U ,0x00100D00U),
+    EMIT_MASKWRITE(0XF8000190, 0x03F03F30U ,0x00200730U),
     // .. .. SRCSEL = 0x0
     // .. .. ==> 0XF80001A0[5:4] = 0x00000000U
     // .. ..     ==> MASK : 0x00000030U    VAL : 0x00000000U
@@ -454,9 +454,9 @@ unsigned long ps7_clock_init_data_3_0[] = {
     // .. .. UART0_CPU_1XCLKACT = 0x1
     // .. .. ==> 0XF800012C[20:20] = 0x00000001U
     // .. ..     ==> MASK : 0x00100000U    VAL : 0x00100000U
-    // .. .. UART1_CPU_1XCLKACT = 0x1
-    // .. .. ==> 0XF800012C[21:21] = 0x00000001U
-    // .. ..     ==> MASK : 0x00200000U    VAL : 0x00200000U
+    // .. .. UART1_CPU_1XCLKACT = 0x0
+    // .. .. ==> 0XF800012C[21:21] = 0x00000000U
+    // .. ..     ==> MASK : 0x00200000U    VAL : 0x00000000U
     // .. .. GPIO_CPU_1XCLKACT = 0x1
     // .. .. ==> 0XF800012C[22:22] = 0x00000001U
     // .. ..     ==> MASK : 0x00400000U    VAL : 0x00400000U
@@ -467,7 +467,7 @@ unsigned long ps7_clock_init_data_3_0[] = {
     // .. .. ==> 0XF800012C[24:24] = 0x00000001U
     // .. ..     ==> MASK : 0x01000000U    VAL : 0x01000000U
     // .. .. 
-    EMIT_MASKWRITE(0XF800012C, 0x01FFCCCDU ,0x01FC444DU),
+    EMIT_MASKWRITE(0XF800012C, 0x01FFCCCDU ,0x01DC444DU),
     // .. FINISH: CLOCK CONTROL SLCR REGISTERS
     // .. START: THIS SHOULD BE BLANK
     // .. FINISH: THIS SHOULD BE BLANK
@@ -3667,62 +3667,6 @@ unsigned long ps7_peripherals_init_data_3_0[] = {
     // .. FINISH: SRAM/NOR SET OPMODE
     // .. START: UART REGISTERS
     // .. BDIV = 0x6
-    // .. ==> 0XE0001034[7:0] = 0x00000006U
-    // ..     ==> MASK : 0x000000FFU    VAL : 0x00000006U
-    // .. 
-    EMIT_MASKWRITE(0XE0001034, 0x000000FFU ,0x00000006U),
-    // .. CD = 0x7c
-    // .. ==> 0XE0001018[15:0] = 0x0000007CU
-    // ..     ==> MASK : 0x0000FFFFU    VAL : 0x0000007CU
-    // .. 
-    EMIT_MASKWRITE(0XE0001018, 0x0000FFFFU ,0x0000007CU),
-    // .. STPBRK = 0x0
-    // .. ==> 0XE0001000[8:8] = 0x00000000U
-    // ..     ==> MASK : 0x00000100U    VAL : 0x00000000U
-    // .. STTBRK = 0x0
-    // .. ==> 0XE0001000[7:7] = 0x00000000U
-    // ..     ==> MASK : 0x00000080U    VAL : 0x00000000U
-    // .. RSTTO = 0x0
-    // .. ==> 0XE0001000[6:6] = 0x00000000U
-    // ..     ==> MASK : 0x00000040U    VAL : 0x00000000U
-    // .. TXDIS = 0x0
-    // .. ==> 0XE0001000[5:5] = 0x00000000U
-    // ..     ==> MASK : 0x00000020U    VAL : 0x00000000U
-    // .. TXEN = 0x1
-    // .. ==> 0XE0001000[4:4] = 0x00000001U
-    // ..     ==> MASK : 0x00000010U    VAL : 0x00000010U
-    // .. RXDIS = 0x0
-    // .. ==> 0XE0001000[3:3] = 0x00000000U
-    // ..     ==> MASK : 0x00000008U    VAL : 0x00000000U
-    // .. RXEN = 0x1
-    // .. ==> 0XE0001000[2:2] = 0x00000001U
-    // ..     ==> MASK : 0x00000004U    VAL : 0x00000004U
-    // .. TXRES = 0x1
-    // .. ==> 0XE0001000[1:1] = 0x00000001U
-    // ..     ==> MASK : 0x00000002U    VAL : 0x00000002U
-    // .. RXRES = 0x1
-    // .. ==> 0XE0001000[0:0] = 0x00000001U
-    // ..     ==> MASK : 0x00000001U    VAL : 0x00000001U
-    // .. 
-    EMIT_MASKWRITE(0XE0001000, 0x000001FFU ,0x00000017U),
-    // .. CHMODE = 0x0
-    // .. ==> 0XE0001004[9:8] = 0x00000000U
-    // ..     ==> MASK : 0x00000300U    VAL : 0x00000000U
-    // .. NBSTOP = 0x0
-    // .. ==> 0XE0001004[7:6] = 0x00000000U
-    // ..     ==> MASK : 0x000000C0U    VAL : 0x00000000U
-    // .. PAR = 0x4
-    // .. ==> 0XE0001004[5:3] = 0x00000004U
-    // ..     ==> MASK : 0x00000038U    VAL : 0x00000020U
-    // .. CHRL = 0x0
-    // .. ==> 0XE0001004[2:1] = 0x00000000U
-    // ..     ==> MASK : 0x00000006U    VAL : 0x00000000U
-    // .. CLKS = 0x0
-    // .. ==> 0XE0001004[0:0] = 0x00000000U
-    // ..     ==> MASK : 0x00000001U    VAL : 0x00000000U
-    // .. 
-    EMIT_MASKWRITE(0XE0001004, 0x000003FFU ,0x00000020U),
-    // .. BDIV = 0x6
     // .. ==> 0XE0000034[7:0] = 0x00000006U
     // ..     ==> MASK : 0x000000FFU    VAL : 0x00000006U
     // .. 
@@ -4578,9 +4522,9 @@ unsigned long ps7_clock_init_data_2_0[] = {
     // .. CLKACT0 = 0x1
     // .. ==> 0XF8000154[0:0] = 0x00000001U
     // ..     ==> MASK : 0x00000001U    VAL : 0x00000001U
-    // .. CLKACT1 = 0x1
-    // .. ==> 0XF8000154[1:1] = 0x00000001U
-    // ..     ==> MASK : 0x00000002U    VAL : 0x00000002U
+    // .. CLKACT1 = 0x0
+    // .. ==> 0XF8000154[1:1] = 0x00000000U
+    // ..     ==> MASK : 0x00000002U    VAL : 0x00000000U
     // .. SRCSEL = 0x0
     // .. ==> 0XF8000154[5:4] = 0x00000000U
     // ..     ==> MASK : 0x00000030U    VAL : 0x00000000U
@@ -4588,7 +4532,7 @@ unsigned long ps7_clock_init_data_2_0[] = {
     // .. ==> 0XF8000154[13:8] = 0x0000000AU
     // ..     ==> MASK : 0x00003F00U    VAL : 0x00000A00U
     // .. 
-    EMIT_MASKWRITE(0XF8000154, 0x00003F33U ,0x00000A03U),
+    EMIT_MASKWRITE(0XF8000154, 0x00003F33U ,0x00000A01U),
     // .. CLKACT0 = 0x1
     // .. ==> 0XF8000158[0:0] = 0x00000001U
     // ..     ==> MASK : 0x00000001U    VAL : 0x00000001U
@@ -4638,17 +4582,17 @@ unsigned long ps7_clock_init_data_2_0[] = {
     // .. ..     ==> MASK : 0x03F00000U    VAL : 0x00100000U
     // .. .. 
     EMIT_MASKWRITE(0XF8000180, 0x03F03F30U ,0x00100B20U),
-    // .. .. SRCSEL = 0x0
-    // .. .. ==> 0XF8000190[5:4] = 0x00000000U
-    // .. ..     ==> MASK : 0x00000030U    VAL : 0x00000000U
-    // .. .. DIVISOR0 = 0xd
-    // .. .. ==> 0XF8000190[13:8] = 0x0000000DU
-    // .. ..     ==> MASK : 0x00003F00U    VAL : 0x00000D00U
-    // .. .. DIVISOR1 = 0x1
-    // .. .. ==> 0XF8000190[25:20] = 0x00000001U
-    // .. ..     ==> MASK : 0x03F00000U    VAL : 0x00100000U
+    // .. .. SRCSEL = 0x3
+    // .. .. ==> 0XF8000190[5:4] = 0x00000003U
+    // .. ..     ==> MASK : 0x00000030U    VAL : 0x00000030U
+    // .. .. DIVISOR0 = 0x7
+    // .. .. ==> 0XF8000190[13:8] = 0x00000007U
+    // .. ..     ==> MASK : 0x00003F00U    VAL : 0x00000700U
+    // .. .. DIVISOR1 = 0x2
+    // .. .. ==> 0XF8000190[25:20] = 0x00000002U
+    // .. ..     ==> MASK : 0x03F00000U    VAL : 0x00200000U
     // .. .. 
-    EMIT_MASKWRITE(0XF8000190, 0x03F03F30U ,0x00100D00U),
+    EMIT_MASKWRITE(0XF8000190, 0x03F03F30U ,0x00200730U),
     // .. .. SRCSEL = 0x0
     // .. .. ==> 0XF80001A0[5:4] = 0x00000000U
     // .. ..     ==> MASK : 0x00000030U    VAL : 0x00000000U
@@ -4707,9 +4651,9 @@ unsigned long ps7_clock_init_data_2_0[] = {
     // .. .. UART0_CPU_1XCLKACT = 0x1
     // .. .. ==> 0XF800012C[20:20] = 0x00000001U
     // .. ..     ==> MASK : 0x00100000U    VAL : 0x00100000U
-    // .. .. UART1_CPU_1XCLKACT = 0x1
-    // .. .. ==> 0XF800012C[21:21] = 0x00000001U
-    // .. ..     ==> MASK : 0x00200000U    VAL : 0x00200000U
+    // .. .. UART1_CPU_1XCLKACT = 0x0
+    // .. .. ==> 0XF800012C[21:21] = 0x00000000U
+    // .. ..     ==> MASK : 0x00200000U    VAL : 0x00000000U
     // .. .. GPIO_CPU_1XCLKACT = 0x1
     // .. .. ==> 0XF800012C[22:22] = 0x00000001U
     // .. ..     ==> MASK : 0x00400000U    VAL : 0x00400000U
@@ -4720,7 +4664,7 @@ unsigned long ps7_clock_init_data_2_0[] = {
     // .. .. ==> 0XF800012C[24:24] = 0x00000001U
     // .. ..     ==> MASK : 0x01000000U    VAL : 0x01000000U
     // .. .. 
-    EMIT_MASKWRITE(0XF800012C, 0x01FFCCCDU ,0x01FC444DU),
+    EMIT_MASKWRITE(0XF800012C, 0x01FFCCCDU ,0x01DC444DU),
     // .. FINISH: CLOCK CONTROL SLCR REGISTERS
     // .. START: THIS SHOULD BE BLANK
     // .. FINISH: THIS SHOULD BE BLANK
@@ -8075,68 +8019,6 @@ unsigned long ps7_peripherals_init_data_2_0[] = {
     // .. FINISH: SRAM/NOR SET OPMODE
     // .. START: UART REGISTERS
     // .. BDIV = 0x6
-    // .. ==> 0XE0001034[7:0] = 0x00000006U
-    // ..     ==> MASK : 0x000000FFU    VAL : 0x00000006U
-    // .. 
-    EMIT_MASKWRITE(0XE0001034, 0x000000FFU ,0x00000006U),
-    // .. CD = 0x7c
-    // .. ==> 0XE0001018[15:0] = 0x0000007CU
-    // ..     ==> MASK : 0x0000FFFFU    VAL : 0x0000007CU
-    // .. 
-    EMIT_MASKWRITE(0XE0001018, 0x0000FFFFU ,0x0000007CU),
-    // .. STPBRK = 0x0
-    // .. ==> 0XE0001000[8:8] = 0x00000000U
-    // ..     ==> MASK : 0x00000100U    VAL : 0x00000000U
-    // .. STTBRK = 0x0
-    // .. ==> 0XE0001000[7:7] = 0x00000000U
-    // ..     ==> MASK : 0x00000080U    VAL : 0x00000000U
-    // .. RSTTO = 0x0
-    // .. ==> 0XE0001000[6:6] = 0x00000000U
-    // ..     ==> MASK : 0x00000040U    VAL : 0x00000000U
-    // .. TXDIS = 0x0
-    // .. ==> 0XE0001000[5:5] = 0x00000000U
-    // ..     ==> MASK : 0x00000020U    VAL : 0x00000000U
-    // .. TXEN = 0x1
-    // .. ==> 0XE0001000[4:4] = 0x00000001U
-    // ..     ==> MASK : 0x00000010U    VAL : 0x00000010U
-    // .. RXDIS = 0x0
-    // .. ==> 0XE0001000[3:3] = 0x00000000U
-    // ..     ==> MASK : 0x00000008U    VAL : 0x00000000U
-    // .. RXEN = 0x1
-    // .. ==> 0XE0001000[2:2] = 0x00000001U
-    // ..     ==> MASK : 0x00000004U    VAL : 0x00000004U
-    // .. TXRES = 0x1
-    // .. ==> 0XE0001000[1:1] = 0x00000001U
-    // ..     ==> MASK : 0x00000002U    VAL : 0x00000002U
-    // .. RXRES = 0x1
-    // .. ==> 0XE0001000[0:0] = 0x00000001U
-    // ..     ==> MASK : 0x00000001U    VAL : 0x00000001U
-    // .. 
-    EMIT_MASKWRITE(0XE0001000, 0x000001FFU ,0x00000017U),
-    // .. IRMODE = 0x0
-    // .. ==> 0XE0001004[11:11] = 0x00000000U
-    // ..     ==> MASK : 0x00000800U    VAL : 0x00000000U
-    // .. UCLKEN = 0x0
-    // .. ==> 0XE0001004[10:10] = 0x00000000U
-    // ..     ==> MASK : 0x00000400U    VAL : 0x00000000U
-    // .. CHMODE = 0x0
-    // .. ==> 0XE0001004[9:8] = 0x00000000U
-    // ..     ==> MASK : 0x00000300U    VAL : 0x00000000U
-    // .. NBSTOP = 0x0
-    // .. ==> 0XE0001004[7:6] = 0x00000000U
-    // ..     ==> MASK : 0x000000C0U    VAL : 0x00000000U
-    // .. PAR = 0x4
-    // .. ==> 0XE0001004[5:3] = 0x00000004U
-    // ..     ==> MASK : 0x00000038U    VAL : 0x00000020U
-    // .. CHRL = 0x0
-    // .. ==> 0XE0001004[2:1] = 0x00000000U
-    // ..     ==> MASK : 0x00000006U    VAL : 0x00000000U
-    // .. CLKS = 0x0
-    // .. ==> 0XE0001004[0:0] = 0x00000000U
-    // ..     ==> MASK : 0x00000001U    VAL : 0x00000000U
-    // .. 
-    EMIT_MASKWRITE(0XE0001004, 0x00000FFFU ,0x00000020U),
-    // .. BDIV = 0x6
     // .. ==> 0XE0000034[7:0] = 0x00000006U
     // ..     ==> MASK : 0x000000FFU    VAL : 0x00000006U
     // .. 
@@ -8990,9 +8872,9 @@ unsigned long ps7_clock_init_data_1_0[] = {
     // .. CLKACT0 = 0x1
     // .. ==> 0XF8000154[0:0] = 0x00000001U
     // ..     ==> MASK : 0x00000001U    VAL : 0x00000001U
-    // .. CLKACT1 = 0x1
-    // .. ==> 0XF8000154[1:1] = 0x00000001U
-    // ..     ==> MASK : 0x00000002U    VAL : 0x00000002U
+    // .. CLKACT1 = 0x0
+    // .. ==> 0XF8000154[1:1] = 0x00000000U
+    // ..     ==> MASK : 0x00000002U    VAL : 0x00000000U
     // .. SRCSEL = 0x0
     // .. ==> 0XF8000154[5:4] = 0x00000000U
     // ..     ==> MASK : 0x00000030U    VAL : 0x00000000U
@@ -9000,7 +8882,7 @@ unsigned long ps7_clock_init_data_1_0[] = {
     // .. ==> 0XF8000154[13:8] = 0x0000000AU
     // ..     ==> MASK : 0x00003F00U    VAL : 0x00000A00U
     // .. 
-    EMIT_MASKWRITE(0XF8000154, 0x00003F33U ,0x00000A03U),
+    EMIT_MASKWRITE(0XF8000154, 0x00003F33U ,0x00000A01U),
     // .. CLKACT0 = 0x1
     // .. ==> 0XF8000158[0:0] = 0x00000001U
     // ..     ==> MASK : 0x00000001U    VAL : 0x00000001U
@@ -9050,17 +8932,17 @@ unsigned long ps7_clock_init_data_1_0[] = {
     // .. ..     ==> MASK : 0x03F00000U    VAL : 0x00100000U
     // .. .. 
     EMIT_MASKWRITE(0XF8000180, 0x03F03F30U ,0x00100B20U),
-    // .. .. SRCSEL = 0x0
-    // .. .. ==> 0XF8000190[5:4] = 0x00000000U
-    // .. ..     ==> MASK : 0x00000030U    VAL : 0x00000000U
-    // .. .. DIVISOR0 = 0xd
-    // .. .. ==> 0XF8000190[13:8] = 0x0000000DU
-    // .. ..     ==> MASK : 0x00003F00U    VAL : 0x00000D00U
-    // .. .. DIVISOR1 = 0x1
-    // .. .. ==> 0XF8000190[25:20] = 0x00000001U
-    // .. ..     ==> MASK : 0x03F00000U    VAL : 0x00100000U
+    // .. .. SRCSEL = 0x3
+    // .. .. ==> 0XF8000190[5:4] = 0x00000003U
+    // .. ..     ==> MASK : 0x00000030U    VAL : 0x00000030U
+    // .. .. DIVISOR0 = 0x7
+    // .. .. ==> 0XF8000190[13:8] = 0x00000007U
+    // .. ..     ==> MASK : 0x00003F00U    VAL : 0x00000700U
+    // .. .. DIVISOR1 = 0x2
+    // .. .. ==> 0XF8000190[25:20] = 0x00000002U
+    // .. ..     ==> MASK : 0x03F00000U    VAL : 0x00200000U
     // .. .. 
-    EMIT_MASKWRITE(0XF8000190, 0x03F03F30U ,0x00100D00U),
+    EMIT_MASKWRITE(0XF8000190, 0x03F03F30U ,0x00200730U),
     // .. .. SRCSEL = 0x0
     // .. .. ==> 0XF80001A0[5:4] = 0x00000000U
     // .. ..     ==> MASK : 0x00000030U    VAL : 0x00000000U
@@ -9119,9 +9001,9 @@ unsigned long ps7_clock_init_data_1_0[] = {
     // .. .. UART0_CPU_1XCLKACT = 0x1
     // .. .. ==> 0XF800012C[20:20] = 0x00000001U
     // .. ..     ==> MASK : 0x00100000U    VAL : 0x00100000U
-    // .. .. UART1_CPU_1XCLKACT = 0x1
-    // .. .. ==> 0XF800012C[21:21] = 0x00000001U
-    // .. ..     ==> MASK : 0x00200000U    VAL : 0x00200000U
+    // .. .. UART1_CPU_1XCLKACT = 0x0
+    // .. .. ==> 0XF800012C[21:21] = 0x00000000U
+    // .. ..     ==> MASK : 0x00200000U    VAL : 0x00000000U
     // .. .. GPIO_CPU_1XCLKACT = 0x1
     // .. .. ==> 0XF800012C[22:22] = 0x00000001U
     // .. ..     ==> MASK : 0x00400000U    VAL : 0x00400000U
@@ -9132,7 +9014,7 @@ unsigned long ps7_clock_init_data_1_0[] = {
     // .. .. ==> 0XF800012C[24:24] = 0x00000001U
     // .. ..     ==> MASK : 0x01000000U    VAL : 0x01000000U
     // .. .. 
-    EMIT_MASKWRITE(0XF800012C, 0x01FFCCCDU ,0x01FC444DU),
+    EMIT_MASKWRITE(0XF800012C, 0x01FFCCCDU ,0x01DC444DU),
     // .. FINISH: CLOCK CONTROL SLCR REGISTERS
     // .. START: THIS SHOULD BE BLANK
     // .. FINISH: THIS SHOULD BE BLANK
@@ -12419,68 +12301,6 @@ unsigned long ps7_peripherals_init_data_1_0[] = {
     // .. START: SRAM/NOR SET OPMODE
     // .. FINISH: SRAM/NOR SET OPMODE
     // .. START: UART REGISTERS
-    // .. BDIV = 0x6
-    // .. ==> 0XE0001034[7:0] = 0x00000006U
-    // ..     ==> MASK : 0x000000FFU    VAL : 0x00000006U
-    // .. 
-    EMIT_MASKWRITE(0XE0001034, 0x000000FFU ,0x00000006U),
-    // .. CD = 0x7c
-    // .. ==> 0XE0001018[15:0] = 0x0000007CU
-    // ..     ==> MASK : 0x0000FFFFU    VAL : 0x0000007CU
-    // .. 
-    EMIT_MASKWRITE(0XE0001018, 0x0000FFFFU ,0x0000007CU),
-    // .. STPBRK = 0x0
-    // .. ==> 0XE0001000[8:8] = 0x00000000U
-    // ..     ==> MASK : 0x00000100U    VAL : 0x00000000U
-    // .. STTBRK = 0x0
-    // .. ==> 0XE0001000[7:7] = 0x00000000U
-    // ..     ==> MASK : 0x00000080U    VAL : 0x00000000U
-    // .. RSTTO = 0x0
-    // .. ==> 0XE0001000[6:6] = 0x00000000U
-    // ..     ==> MASK : 0x00000040U    VAL : 0x00000000U
-    // .. TXDIS = 0x0
-    // .. ==> 0XE0001000[5:5] = 0x00000000U
-    // ..     ==> MASK : 0x00000020U    VAL : 0x00000000U
-    // .. TXEN = 0x1
-    // .. ==> 0XE0001000[4:4] = 0x00000001U
-    // ..     ==> MASK : 0x00000010U    VAL : 0x00000010U
-    // .. RXDIS = 0x0
-    // .. ==> 0XE0001000[3:3] = 0x00000000U
-    // ..     ==> MASK : 0x00000008U    VAL : 0x00000000U
-    // .. RXEN = 0x1
-    // .. ==> 0XE0001000[2:2] = 0x00000001U
-    // ..     ==> MASK : 0x00000004U    VAL : 0x00000004U
-    // .. TXRES = 0x1
-    // .. ==> 0XE0001000[1:1] = 0x00000001U
-    // ..     ==> MASK : 0x00000002U    VAL : 0x00000002U
-    // .. RXRES = 0x1
-    // .. ==> 0XE0001000[0:0] = 0x00000001U
-    // ..     ==> MASK : 0x00000001U    VAL : 0x00000001U
-    // .. 
-    EMIT_MASKWRITE(0XE0001000, 0x000001FFU ,0x00000017U),
-    // .. IRMODE = 0x0
-    // .. ==> 0XE0001004[11:11] = 0x00000000U
-    // ..     ==> MASK : 0x00000800U    VAL : 0x00000000U
-    // .. UCLKEN = 0x0
-    // .. ==> 0XE0001004[10:10] = 0x00000000U
-    // ..     ==> MASK : 0x00000400U    VAL : 0x00000000U
-    // .. CHMODE = 0x0
-    // .. ==> 0XE0001004[9:8] = 0x00000000U
-    // ..     ==> MASK : 0x00000300U    VAL : 0x00000000U
-    // .. NBSTOP = 0x0
-    // .. ==> 0XE0001004[7:6] = 0x00000000U
-    // ..     ==> MASK : 0x000000C0U    VAL : 0x00000000U
-    // .. PAR = 0x4
-    // .. ==> 0XE0001004[5:3] = 0x00000004U
-    // ..     ==> MASK : 0x00000038U    VAL : 0x00000020U
-    // .. CHRL = 0x0
-    // .. ==> 0XE0001004[2:1] = 0x00000000U
-    // ..     ==> MASK : 0x00000006U    VAL : 0x00000000U
-    // .. CLKS = 0x0
-    // .. ==> 0XE0001004[0:0] = 0x00000000U
-    // ..     ==> MASK : 0x00000001U    VAL : 0x00000000U
-    // .. 
-    EMIT_MASKWRITE(0XE0001004, 0x00000FFFU ,0x00000020U),
     // .. BDIV = 0x6
     // .. ==> 0XE0000034[7:0] = 0x00000006U
     // ..     ==> MASK : 0x000000FFU    VAL : 0x00000006U

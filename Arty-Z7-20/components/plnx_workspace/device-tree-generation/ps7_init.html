@@ -1850,17 +1850,6 @@ IO PLL
 </TR>
 <TR valign="top">
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>UART Freq (MHz)</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-IO PLL
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-100.000000
-</TD>
-</TR>
-<TR valign="top">
-<TD width=10% BGCOLOR=#FBF5EF>
 <B>SPI Freq (MHz)</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
@@ -1897,10 +1886,10 @@ ARM PLL
 <B>FPGA2 Freq (MHz)</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-IO PLL
+DDR PLL
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-76.923080
+75.000000
 </TD>
 </TR>
 <TR valign="top">
@@ -6804,10 +6793,10 @@ SLCR_LOCK
 <B>2</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>1</B>
+<B>0</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>2</B>
+<B>0</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>UART 1 reference clock active: 0: Clock is disabled 1: Clock is enabled</B>
@@ -6867,7 +6856,7 @@ SLCR_LOCK
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>a03</B>
+<B>a01</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>UART Ref Clock Control</B>
@@ -7560,10 +7549,10 @@ SLCR_LOCK
 <B>30</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>0</B>
+<B>3</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>0</B>
+<B>30</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>Select the source used to generate the clock: 0x: Source for generated clock is IO PLL. 10: Source for generated clock is ARM PLL. 11: Source for generated clock is DDR PLL.</B>
@@ -7580,10 +7569,10 @@ SLCR_LOCK
 <B>3f00</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>d</B>
+<B>7</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>d00</B>
+<B>700</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>Provides the divisor used to divide the source clock to generate the required generated clock frequency. First cascade divider.</B>
@@ -7600,10 +7589,10 @@ SLCR_LOCK
 <B>3f00000</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>1</B>
+<B>2</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>100000</B>
+<B>200000</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>Provides the divisor used to divide the source clock to generate the required generated clock frequency. Second cascade divide</B>
@@ -7623,7 +7612,7 @@ SLCR_LOCK
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>100d00</B>
+<B>200730</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>PL Clock 2 output control</B>
@@ -8241,10 +8230,10 @@ SLCR_LOCK
 <B>200000</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>1</B>
+<B>0</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>200000</B>
+<B>0</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>UART 1 AMBA Clock control 0: disable, 1: enable</B>
@@ -8324,7 +8313,7 @@ SLCR_LOCK
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>1fc444d</B>
+<B>1dc444d</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>AMBA Peripheral Clock Control</B>
@@ -43974,94 +43963,6 @@ Baud_rate_divider_reg0
 </A>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>0XE0001034</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>32</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>RW</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>0x000000</B>
-</TD>
-<TD width=35% BGCOLOR=#FBF5EF>
-<B>Baud Rate Divider Register</B>
-</TD>
-</TR>
-<TR valign="top">
-<TD width=15% BGCOLOR=#FBF5EF>
-<A href="#Baud_rate_gen_reg0">
-Baud_rate_gen_reg0
-</A>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>0XE0001018</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>32</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>RW</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>0x000000</B>
-</TD>
-<TD width=35% BGCOLOR=#FBF5EF>
-<B>Baud Rate Generator Register.</B>
-</TD>
-</TR>
-<TR valign="top">
-<TD width=15% BGCOLOR=#FBF5EF>
-<A href="#Control_reg0">
-Control_reg0
-</A>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>0XE0001000</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>32</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>RW</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>0x000000</B>
-</TD>
-<TD width=35% BGCOLOR=#FBF5EF>
-<B>UART Control Register</B>
-</TD>
-</TR>
-<TR valign="top">
-<TD width=15% BGCOLOR=#FBF5EF>
-<A href="#mode_reg0">
-mode_reg0
-</A>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>0XE0001004</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>32</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>RW</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>0x000000</B>
-</TD>
-<TD width=35% BGCOLOR=#FBF5EF>
-<B>UART Mode Register</B>
-</TD>
-</TR>
-<TR valign="top">
-<TD width=15% BGCOLOR=#FBF5EF>
-<A href="#Baud_rate_divider_reg0">
-Baud_rate_divider_reg0
-</A>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
 <B>0XE0000034</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
@@ -45158,674 +45059,6 @@ MASK_DATA_0_LSW
 <P>
 <H1>SRAM/NOR SET OPMODE</H1>
 <H1>UART REGISTERS</H1>
-<H2><a name="Baud_rate_divider_reg0">Register (<A href=#mod___slcr> slcr </A>)Baud_rate_divider_reg0</a></H2>
-<TABLE border=1 cellspacing=0 BORDERCOLOR=black WIDTH=100%">
-<TR valign="top">
-<TD width=15% BGCOLOR=#FFFF00>
-<B>Register Name</B>
-</TD>
-<TD width=15% BGCOLOR=#FFFF00>
-<B>Address</B>
-</TD>
-<TD width=10% BGCOLOR=#FFFF00>
-<B>Width</B>
-</TD>
-<TD width=10% BGCOLOR=#FFFF00>
-<B>Type</B>
-</TD>
-<TD width=15% BGCOLOR=#FFFF00>
-<B>Reset Value</B>
-</TD>
-<TD width=35% BGCOLOR=#FFFF00>
-<B>Description</B>
-</TD>
-</TR>
-<TR valign="top">
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>Baud_rate_divider_reg0</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>0XE0001034</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>32</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>rw</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>0x00000000</B>
-</TD>
-<TD width=35% BGCOLOR=#FBF5EF>
-<B>--</B>
-</TD>
-</TR>
-</TABLE>
-<P>
-<TABLE border=1 cellspacing=0 BORDERCOLOR=black WIDTH=100%">
-<TR valign="top">
-<TD width=15% BGCOLOR=#C0FFC0>
-<B>Field Name</B>
-</TD>
-<TD width=15% BGCOLOR=#C0FFC0>
-<B>Bits</B>
-</TD>
-<TD width=10% BGCOLOR=#C0FFC0>
-<B>Mask</B>
-</TD>
-<TD width=10% BGCOLOR=#C0FFC0>
-<B>Value</B>
-</TD>
-<TD width=15% BGCOLOR=#C0FFC0>
-<B>Shifted Value</B>
-</TD>
-<TD width=35% BGCOLOR=#C0FFC0>
-<B>Description</B>
-</TD>
-</TR>
-<TR valign="top">
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>BDIV</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>7:0</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>ff</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>6</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>6</B>
-</TD>
-<TD width=35% BGCOLOR=#FBF5EF>
-<B>Baud rate divider value: 0 - 3: ignored 4 - 255: Baud rate</B>
-</TD>
-</TR>
-<TR valign="top">
-<TD width=15% BGCOLOR=#C0C0C0>
-<B>Baud_rate_divider_reg0@0XE0001034</B>
-</TD>
-<TD width=15% BGCOLOR=#C0C0C0>
-<B>31:0</B>
-</TD>
-<TD width=10% BGCOLOR=#C0C0C0>
-<B>ff</B>
-</TD>
-<TD width=10% BGCOLOR=#C0C0C0>
-<B></B>
-</TD>
-<TD width=15% BGCOLOR=#C0C0C0>
-<B>6</B>
-</TD>
-<TD width=35% BGCOLOR=#C0C0C0>
-<B>Baud Rate Divider Register</B>
-</TD>
-</TR>
-</TABLE>
-<P>
-<H2><a name="Baud_rate_gen_reg0">Register (<A href=#mod___slcr> slcr </A>)Baud_rate_gen_reg0</a></H2>
-<TABLE border=1 cellspacing=0 BORDERCOLOR=black WIDTH=100%">
-<TR valign="top">
-<TD width=15% BGCOLOR=#FFFF00>
-<B>Register Name</B>
-</TD>
-<TD width=15% BGCOLOR=#FFFF00>
-<B>Address</B>
-</TD>
-<TD width=10% BGCOLOR=#FFFF00>
-<B>Width</B>
-</TD>
-<TD width=10% BGCOLOR=#FFFF00>
-<B>Type</B>
-</TD>
-<TD width=15% BGCOLOR=#FFFF00>
-<B>Reset Value</B>
-</TD>
-<TD width=35% BGCOLOR=#FFFF00>
-<B>Description</B>
-</TD>
-</TR>
-<TR valign="top">
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>Baud_rate_gen_reg0</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>0XE0001018</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>32</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>rw</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>0x00000000</B>
-</TD>
-<TD width=35% BGCOLOR=#FBF5EF>
-<B>--</B>
-</TD>
-</TR>
-</TABLE>
-<P>
-<TABLE border=1 cellspacing=0 BORDERCOLOR=black WIDTH=100%">
-<TR valign="top">
-<TD width=15% BGCOLOR=#C0FFC0>
-<B>Field Name</B>
-</TD>
-<TD width=15% BGCOLOR=#C0FFC0>
-<B>Bits</B>
-</TD>
-<TD width=10% BGCOLOR=#C0FFC0>
-<B>Mask</B>
-</TD>
-<TD width=10% BGCOLOR=#C0FFC0>
-<B>Value</B>
-</TD>
-<TD width=15% BGCOLOR=#C0FFC0>
-<B>Shifted Value</B>
-</TD>
-<TD width=35% BGCOLOR=#C0FFC0>
-<B>Description</B>
-</TD>
-</TR>
-<TR valign="top">
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>CD</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>15:0</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>ffff</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>7c</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>7c</B>
-</TD>
-<TD width=35% BGCOLOR=#FBF5EF>
-<B>Baud Rate Clock Divisor Value: 0: Disables baud_sample 1: Clock divisor bypass (baud_sample = sel_clk) 2 - 65535: baud_sample</B>
-</TD>
-</TR>
-<TR valign="top">
-<TD width=15% BGCOLOR=#C0C0C0>
-<B>Baud_rate_gen_reg0@0XE0001018</B>
-</TD>
-<TD width=15% BGCOLOR=#C0C0C0>
-<B>31:0</B>
-</TD>
-<TD width=10% BGCOLOR=#C0C0C0>
-<B>ffff</B>
-</TD>
-<TD width=10% BGCOLOR=#C0C0C0>
-<B></B>
-</TD>
-<TD width=15% BGCOLOR=#C0C0C0>
-<B>7c</B>
-</TD>
-<TD width=35% BGCOLOR=#C0C0C0>
-<B>Baud Rate Generator Register.</B>
-</TD>
-</TR>
-</TABLE>
-<P>
-<H2><a name="Control_reg0">Register (<A href=#mod___slcr> slcr </A>)Control_reg0</a></H2>
-<TABLE border=1 cellspacing=0 BORDERCOLOR=black WIDTH=100%">
-<TR valign="top">
-<TD width=15% BGCOLOR=#FFFF00>
-<B>Register Name</B>
-</TD>
-<TD width=15% BGCOLOR=#FFFF00>
-<B>Address</B>
-</TD>
-<TD width=10% BGCOLOR=#FFFF00>
-<B>Width</B>
-</TD>
-<TD width=10% BGCOLOR=#FFFF00>
-<B>Type</B>
-</TD>
-<TD width=15% BGCOLOR=#FFFF00>
-<B>Reset Value</B>
-</TD>
-<TD width=35% BGCOLOR=#FFFF00>
-<B>Description</B>
-</TD>
-</TR>
-<TR valign="top">
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>Control_reg0</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>0XE0001000</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>32</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>rw</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>0x00000000</B>
-</TD>
-<TD width=35% BGCOLOR=#FBF5EF>
-<B>--</B>
-</TD>
-</TR>
-</TABLE>
-<P>
-<TABLE border=1 cellspacing=0 BORDERCOLOR=black WIDTH=100%">
-<TR valign="top">
-<TD width=15% BGCOLOR=#C0FFC0>
-<B>Field Name</B>
-</TD>
-<TD width=15% BGCOLOR=#C0FFC0>
-<B>Bits</B>
-</TD>
-<TD width=10% BGCOLOR=#C0FFC0>
-<B>Mask</B>
-</TD>
-<TD width=10% BGCOLOR=#C0FFC0>
-<B>Value</B>
-</TD>
-<TD width=15% BGCOLOR=#C0FFC0>
-<B>Shifted Value</B>
-</TD>
-<TD width=35% BGCOLOR=#C0FFC0>
-<B>Description</B>
-</TD>
-</TR>
-<TR valign="top">
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>STPBRK</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>8:8</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>100</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>0</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>0</B>
-</TD>
-<TD width=35% BGCOLOR=#FBF5EF>
-<B>Stop transmitter break: 0: no affect 1: stop transmission of the break after a minimum of one character length and transmit a high level during 12 bit periods. It can be set regardless of the value of STTBRK.</B>
-</TD>
-</TR>
-<TR valign="top">
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>STTBRK</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>7:7</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>80</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>0</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>0</B>
-</TD>
-<TD width=35% BGCOLOR=#FBF5EF>
-<B>Start transmitter break: 0: no affect 1: start to transmit a break after the characters currently present in the FIFO and the transmit shift register have been transmitted. It can only be set if STPBRK (Stop transmitter break) is not high.</B>
-</TD>
-</TR>
-<TR valign="top">
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>RSTTO</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>6:6</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>40</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>0</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>0</B>
-</TD>
-<TD width=35% BGCOLOR=#FBF5EF>
-<B>Restart receiver timeout counter: 1: receiver timeout counter is restarted. This bit is self clearing once the restart has completed.</B>
-</TD>
-</TR>
-<TR valign="top">
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>TXDIS</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>5:5</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>20</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>0</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>0</B>
-</TD>
-<TD width=35% BGCOLOR=#FBF5EF>
-<B>Transmit disable: 0: enable transmitter 1: disable transmitter</B>
-</TD>
-</TR>
-<TR valign="top">
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>TXEN</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>4:4</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>10</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>1</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>10</B>
-</TD>
-<TD width=35% BGCOLOR=#FBF5EF>
-<B>Transmit enable: 0: disable transmitter 1: enable transmitter, provided the TXDIS field is set to 0.</B>
-</TD>
-</TR>
-<TR valign="top">
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>RXDIS</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>3:3</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>8</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>0</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>0</B>
-</TD>
-<TD width=35% BGCOLOR=#FBF5EF>
-<B>Receive disable: 0: enable 1: disable, regardless of the value of RXEN</B>
-</TD>
-</TR>
-<TR valign="top">
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>RXEN</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>2:2</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>4</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>1</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>4</B>
-</TD>
-<TD width=35% BGCOLOR=#FBF5EF>
-<B>Receive enable: 0: disable 1: enable When set to one, the receiver logic is enabled, provided the RXDIS field is set to zero.</B>
-</TD>
-</TR>
-<TR valign="top">
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>TXRES</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>1:1</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>2</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>1</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>2</B>
-</TD>
-<TD width=35% BGCOLOR=#FBF5EF>
-<B>Software reset for Tx data path: 0: no affect 1: transmitter logic is reset and all pending transmitter data is discarded This bit is self clearing once the reset has completed.</B>
-</TD>
-</TR>
-<TR valign="top">
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>RXRES</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>0:0</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>1</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>1</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>1</B>
-</TD>
-<TD width=35% BGCOLOR=#FBF5EF>
-<B>Software reset for Rx data path: 0: no affect 1: receiver logic is reset and all pending receiver data is discarded. This bit is self clearing once the reset has completed.</B>
-</TD>
-</TR>
-<TR valign="top">
-<TD width=15% BGCOLOR=#C0C0C0>
-<B>Control_reg0@0XE0001000</B>
-</TD>
-<TD width=15% BGCOLOR=#C0C0C0>
-<B>31:0</B>
-</TD>
-<TD width=10% BGCOLOR=#C0C0C0>
-<B>1ff</B>
-</TD>
-<TD width=10% BGCOLOR=#C0C0C0>
-<B></B>
-</TD>
-<TD width=15% BGCOLOR=#C0C0C0>
-<B>17</B>
-</TD>
-<TD width=35% BGCOLOR=#C0C0C0>
-<B>UART Control Register</B>
-</TD>
-</TR>
-</TABLE>
-<P>
-<H2><a name="mode_reg0">Register (<A href=#mod___slcr> slcr </A>)mode_reg0</a></H2>
-<TABLE border=1 cellspacing=0 BORDERCOLOR=black WIDTH=100%">
-<TR valign="top">
-<TD width=15% BGCOLOR=#FFFF00>
-<B>Register Name</B>
-</TD>
-<TD width=15% BGCOLOR=#FFFF00>
-<B>Address</B>
-</TD>
-<TD width=10% BGCOLOR=#FFFF00>
-<B>Width</B>
-</TD>
-<TD width=10% BGCOLOR=#FFFF00>
-<B>Type</B>
-</TD>
-<TD width=15% BGCOLOR=#FFFF00>
-<B>Reset Value</B>
-</TD>
-<TD width=35% BGCOLOR=#FFFF00>
-<B>Description</B>
-</TD>
-</TR>
-<TR valign="top">
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>mode_reg0</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>0XE0001004</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>32</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>rw</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>0x00000000</B>
-</TD>
-<TD width=35% BGCOLOR=#FBF5EF>
-<B>--</B>
-</TD>
-</TR>
-</TABLE>
-<P>
-<TABLE border=1 cellspacing=0 BORDERCOLOR=black WIDTH=100%">
-<TR valign="top">
-<TD width=15% BGCOLOR=#C0FFC0>
-<B>Field Name</B>
-</TD>
-<TD width=15% BGCOLOR=#C0FFC0>
-<B>Bits</B>
-</TD>
-<TD width=10% BGCOLOR=#C0FFC0>
-<B>Mask</B>
-</TD>
-<TD width=10% BGCOLOR=#C0FFC0>
-<B>Value</B>
-</TD>
-<TD width=15% BGCOLOR=#C0FFC0>
-<B>Shifted Value</B>
-</TD>
-<TD width=35% BGCOLOR=#C0FFC0>
-<B>Description</B>
-</TD>
-</TR>
-<TR valign="top">
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>CHMODE</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>9:8</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>300</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>0</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>0</B>
-</TD>
-<TD width=35% BGCOLOR=#FBF5EF>
-<B>Channel mode: Defines the mode of operation of the UART. 00: normal 01: automatic echo 10: local loopback 11: remote loopback</B>
-</TD>
-</TR>
-<TR valign="top">
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>NBSTOP</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>7:6</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>c0</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>0</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>0</B>
-</TD>
-<TD width=35% BGCOLOR=#FBF5EF>
-<B>Number of stop bits: Defines the number of stop bits to detect on receive and to generate on transmit. 00: 1 stop bit 01: 1.5 stop bits 10: 2 stop bits 11: reserved</B>
-</TD>
-</TR>
-<TR valign="top">
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>PAR</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>5:3</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>38</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>4</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>20</B>
-</TD>
-<TD width=35% BGCOLOR=#FBF5EF>
-<B>Parity type select: Defines the expected parity to check on receive and the parity to generate on transmit. 000: even parity 001: odd parity 010: forced to 0 parity (space) 011: forced to 1 parity (mark) 1xx: no parity</B>
-</TD>
-</TR>
-<TR valign="top">
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>CHRL</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>2:1</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>6</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>0</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>0</B>
-</TD>
-<TD width=35% BGCOLOR=#FBF5EF>
-<B>Character length select: Defines the number of bits in each character. 11: 6 bits 10: 7 bits 0x: 8 bits</B>
-</TD>
-</TR>
-<TR valign="top">
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>CLKS</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>0:0</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>1</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>0</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>0</B>
-</TD>
-<TD width=35% BGCOLOR=#FBF5EF>
-<B>Clock source select: This field defines whether a pre-scalar of 8 is applied to the baud rate generator input clock. 0: clock source is uart_ref_clk 1: clock source is uart_ref_clk/8</B>
-</TD>
-</TR>
-<TR valign="top">
-<TD width=15% BGCOLOR=#C0C0C0>
-<B>mode_reg0@0XE0001004</B>
-</TD>
-<TD width=15% BGCOLOR=#C0C0C0>
-<B>31:0</B>
-</TD>
-<TD width=10% BGCOLOR=#C0C0C0>
-<B>3ff</B>
-</TD>
-<TD width=10% BGCOLOR=#C0C0C0>
-<B></B>
-</TD>
-<TD width=15% BGCOLOR=#C0C0C0>
-<B>20</B>
-</TD>
-<TD width=35% BGCOLOR=#C0C0C0>
-<B>UART Mode Register</B>
-</TD>
-</TR>
-</TABLE>
-<P>
 <H2><a name="Baud_rate_divider_reg0">Register (<A href=#mod___slcr> slcr </A>)Baud_rate_divider_reg0</a></H2>
 <TABLE border=1 cellspacing=0 BORDERCOLOR=black WIDTH=100%">
 <TR valign="top">
@@ -54393,10 +53626,10 @@ SLCR_LOCK
 <B>2</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>1</B>
+<B>0</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>2</B>
+<B>0</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>UART 1 reference clock active: 0: Clock is disabled 1: Clock is enabled</B>
@@ -54456,7 +53689,7 @@ SLCR_LOCK
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>a03</B>
+<B>a01</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>UART Ref Clock Control</B>
@@ -55149,10 +54382,10 @@ SLCR_LOCK
 <B>30</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>0</B>
+<B>3</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>0</B>
+<B>30</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>Select the source used to generate the clock: 0x: Source for generated clock is IO PLL. 10: Source for generated clock is ARM PLL. 11: Source for generated clock is DDR PLL.</B>
@@ -55169,10 +54402,10 @@ SLCR_LOCK
 <B>3f00</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>d</B>
+<B>7</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>d00</B>
+<B>700</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>Provides the divisor used to divide the source clock to generate the required generated clock frequency. First cascade divider.</B>
@@ -55189,10 +54422,10 @@ SLCR_LOCK
 <B>3f00000</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>1</B>
+<B>2</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>100000</B>
+<B>200000</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>Provides the divisor used to divide the source clock to generate the required generated clock frequency. Second cascade divide</B>
@@ -55212,7 +54445,7 @@ SLCR_LOCK
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>100d00</B>
+<B>200730</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>PL Clock 2 output control</B>
@@ -55830,10 +55063,10 @@ SLCR_LOCK
 <B>200000</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>1</B>
+<B>0</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>200000</B>
+<B>0</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>UART 1 AMBA Clock control 0: disable, 1: enable</B>
@@ -55913,7 +55146,7 @@ SLCR_LOCK
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>1fc444d</B>
+<B>1dc444d</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>AMBA Peripheral Clock Control</B>
@@ -92692,94 +91925,6 @@ Baud_rate_divider_reg0
 </A>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>0XE0001034</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>32</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>RW</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>0x000000</B>
-</TD>
-<TD width=35% BGCOLOR=#FBF5EF>
-<B>baud rate divider register</B>
-</TD>
-</TR>
-<TR valign="top">
-<TD width=15% BGCOLOR=#FBF5EF>
-<A href="#Baud_rate_gen_reg0">
-Baud_rate_gen_reg0
-</A>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>0XE0001018</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>32</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>RW</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>0x000000</B>
-</TD>
-<TD width=35% BGCOLOR=#FBF5EF>
-<B>Baud rate divider register.</B>
-</TD>
-</TR>
-<TR valign="top">
-<TD width=15% BGCOLOR=#FBF5EF>
-<A href="#Control_reg0">
-Control_reg0
-</A>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>0XE0001000</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>32</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>RW</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>0x000000</B>
-</TD>
-<TD width=35% BGCOLOR=#FBF5EF>
-<B>UART Control register</B>
-</TD>
-</TR>
-<TR valign="top">
-<TD width=15% BGCOLOR=#FBF5EF>
-<A href="#mode_reg0">
-mode_reg0
-</A>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>0XE0001004</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>32</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>RW</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>0x000000</B>
-</TD>
-<TD width=35% BGCOLOR=#FBF5EF>
-<B>UART Mode register</B>
-</TD>
-</TR>
-<TR valign="top">
-<TD width=15% BGCOLOR=#FBF5EF>
-<A href="#Baud_rate_divider_reg0">
-Baud_rate_divider_reg0
-</A>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
 <B>0XE0000034</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
@@ -93876,714 +93021,6 @@ MASK_DATA_0_LSW
 <P>
 <H1>SRAM/NOR SET OPMODE</H1>
 <H1>UART REGISTERS</H1>
-<H2><a name="Baud_rate_divider_reg0">Register (<A href=#mod___slcr> slcr </A>)Baud_rate_divider_reg0</a></H2>
-<TABLE border=1 cellspacing=0 BORDERCOLOR=black WIDTH=100%">
-<TR valign="top">
-<TD width=15% BGCOLOR=#FFFF00>
-<B>Register Name</B>
-</TD>
-<TD width=15% BGCOLOR=#FFFF00>
-<B>Address</B>
-</TD>
-<TD width=10% BGCOLOR=#FFFF00>
-<B>Width</B>
-</TD>
-<TD width=10% BGCOLOR=#FFFF00>
-<B>Type</B>
-</TD>
-<TD width=15% BGCOLOR=#FFFF00>
-<B>Reset Value</B>
-</TD>
-<TD width=35% BGCOLOR=#FFFF00>
-<B>Description</B>
-</TD>
-</TR>
-<TR valign="top">
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>Baud_rate_divider_reg0</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>0XE0001034</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>32</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>rw</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>0x00000000</B>
-</TD>
-<TD width=35% BGCOLOR=#FBF5EF>
-<B>--</B>
-</TD>
-</TR>
-</TABLE>
-<P>
-<TABLE border=1 cellspacing=0 BORDERCOLOR=black WIDTH=100%">
-<TR valign="top">
-<TD width=15% BGCOLOR=#C0FFC0>
-<B>Field Name</B>
-</TD>
-<TD width=15% BGCOLOR=#C0FFC0>
-<B>Bits</B>
-</TD>
-<TD width=10% BGCOLOR=#C0FFC0>
-<B>Mask</B>
-</TD>
-<TD width=10% BGCOLOR=#C0FFC0>
-<B>Value</B>
-</TD>
-<TD width=15% BGCOLOR=#C0FFC0>
-<B>Shifted Value</B>
-</TD>
-<TD width=35% BGCOLOR=#C0FFC0>
-<B>Description</B>
-</TD>
-</TR>
-<TR valign="top">
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>BDIV</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>7:0</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>ff</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>6</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>6</B>
-</TD>
-<TD width=35% BGCOLOR=#FBF5EF>
-<B>Baud rate divider value: 0 - 3: ignored 4 - 255: Baud rate</B>
-</TD>
-</TR>
-<TR valign="top">
-<TD width=15% BGCOLOR=#C0C0C0>
-<B>Baud_rate_divider_reg0@0XE0001034</B>
-</TD>
-<TD width=15% BGCOLOR=#C0C0C0>
-<B>31:0</B>
-</TD>
-<TD width=10% BGCOLOR=#C0C0C0>
-<B>ff</B>
-</TD>
-<TD width=10% BGCOLOR=#C0C0C0>
-<B></B>
-</TD>
-<TD width=15% BGCOLOR=#C0C0C0>
-<B>6</B>
-</TD>
-<TD width=35% BGCOLOR=#C0C0C0>
-<B>baud rate divider register</B>
-</TD>
-</TR>
-</TABLE>
-<P>
-<H2><a name="Baud_rate_gen_reg0">Register (<A href=#mod___slcr> slcr </A>)Baud_rate_gen_reg0</a></H2>
-<TABLE border=1 cellspacing=0 BORDERCOLOR=black WIDTH=100%">
-<TR valign="top">
-<TD width=15% BGCOLOR=#FFFF00>
-<B>Register Name</B>
-</TD>
-<TD width=15% BGCOLOR=#FFFF00>
-<B>Address</B>
-</TD>
-<TD width=10% BGCOLOR=#FFFF00>
-<B>Width</B>
-</TD>
-<TD width=10% BGCOLOR=#FFFF00>
-<B>Type</B>
-</TD>
-<TD width=15% BGCOLOR=#FFFF00>
-<B>Reset Value</B>
-</TD>
-<TD width=35% BGCOLOR=#FFFF00>
-<B>Description</B>
-</TD>
-</TR>
-<TR valign="top">
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>Baud_rate_gen_reg0</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>0XE0001018</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>32</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>rw</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>0x00000000</B>
-</TD>
-<TD width=35% BGCOLOR=#FBF5EF>
-<B>--</B>
-</TD>
-</TR>
-</TABLE>
-<P>
-<TABLE border=1 cellspacing=0 BORDERCOLOR=black WIDTH=100%">
-<TR valign="top">
-<TD width=15% BGCOLOR=#C0FFC0>
-<B>Field Name</B>
-</TD>
-<TD width=15% BGCOLOR=#C0FFC0>
-<B>Bits</B>
-</TD>
-<TD width=10% BGCOLOR=#C0FFC0>
-<B>Mask</B>
-</TD>
-<TD width=10% BGCOLOR=#C0FFC0>
-<B>Value</B>
-</TD>
-<TD width=15% BGCOLOR=#C0FFC0>
-<B>Shifted Value</B>
-</TD>
-<TD width=35% BGCOLOR=#C0FFC0>
-<B>Description</B>
-</TD>
-</TR>
-<TR valign="top">
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>CD</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>15:0</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>ffff</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>7c</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>7c</B>
-</TD>
-<TD width=35% BGCOLOR=#FBF5EF>
-<B>Baud Rate Clock Divisor Value: 0: Disables baud_sample 1: Clock divisor bypass 2 - 65535: baud_sample value</B>
-</TD>
-</TR>
-<TR valign="top">
-<TD width=15% BGCOLOR=#C0C0C0>
-<B>Baud_rate_gen_reg0@0XE0001018</B>
-</TD>
-<TD width=15% BGCOLOR=#C0C0C0>
-<B>31:0</B>
-</TD>
-<TD width=10% BGCOLOR=#C0C0C0>
-<B>ffff</B>
-</TD>
-<TD width=10% BGCOLOR=#C0C0C0>
-<B></B>
-</TD>
-<TD width=15% BGCOLOR=#C0C0C0>
-<B>7c</B>
-</TD>
-<TD width=35% BGCOLOR=#C0C0C0>
-<B>Baud rate divider register.</B>
-</TD>
-</TR>
-</TABLE>
-<P>
-<H2><a name="Control_reg0">Register (<A href=#mod___slcr> slcr </A>)Control_reg0</a></H2>
-<TABLE border=1 cellspacing=0 BORDERCOLOR=black WIDTH=100%">
-<TR valign="top">
-<TD width=15% BGCOLOR=#FFFF00>
-<B>Register Name</B>
-</TD>
-<TD width=15% BGCOLOR=#FFFF00>
-<B>Address</B>
-</TD>
-<TD width=10% BGCOLOR=#FFFF00>
-<B>Width</B>
-</TD>
-<TD width=10% BGCOLOR=#FFFF00>
-<B>Type</B>
-</TD>
-<TD width=15% BGCOLOR=#FFFF00>
-<B>Reset Value</B>
-</TD>
-<TD width=35% BGCOLOR=#FFFF00>
-<B>Description</B>
-</TD>
-</TR>
-<TR valign="top">
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>Control_reg0</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>0XE0001000</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>32</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>rw</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>0x00000000</B>
-</TD>
-<TD width=35% BGCOLOR=#FBF5EF>
-<B>--</B>
-</TD>
-</TR>
-</TABLE>
-<P>
-<TABLE border=1 cellspacing=0 BORDERCOLOR=black WIDTH=100%">
-<TR valign="top">
-<TD width=15% BGCOLOR=#C0FFC0>
-<B>Field Name</B>
-</TD>
-<TD width=15% BGCOLOR=#C0FFC0>
-<B>Bits</B>
-</TD>
-<TD width=10% BGCOLOR=#C0FFC0>
-<B>Mask</B>
-</TD>
-<TD width=10% BGCOLOR=#C0FFC0>
-<B>Value</B>
-</TD>
-<TD width=15% BGCOLOR=#C0FFC0>
-<B>Shifted Value</B>
-</TD>
-<TD width=35% BGCOLOR=#C0FFC0>
-<B>Description</B>
-</TD>
-</TR>
-<TR valign="top">
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>STPBRK</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>8:8</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>100</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>0</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>0</B>
-</TD>
-<TD width=35% BGCOLOR=#FBF5EF>
-<B>Stop transmitter break: 0: start break transmission, 1: stop break transmission.</B>
-</TD>
-</TR>
-<TR valign="top">
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>STTBRK</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>7:7</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>80</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>0</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>0</B>
-</TD>
-<TD width=35% BGCOLOR=#FBF5EF>
-<B>Start transmitter break: 0: 1: start to transmit a break. Can only be set if STPBRK (Stop transmitter break) is not high.</B>
-</TD>
-</TR>
-<TR valign="top">
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>RSTTO</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>6:6</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>40</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>0</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>0</B>
-</TD>
-<TD width=35% BGCOLOR=#FBF5EF>
-<B>Restart receiver timeout counter: 0: receiver timeout counter disabled, 1: receiver timeout counter is restarted.</B>
-</TD>
-</TR>
-<TR valign="top">
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>TXDIS</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>5:5</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>20</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>0</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>0</B>
-</TD>
-<TD width=35% BGCOLOR=#FBF5EF>
-<B>Transmit disable: 0: enable transmitter, 0: disable transmitter</B>
-</TD>
-</TR>
-<TR valign="top">
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>TXEN</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>4:4</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>10</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>1</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>10</B>
-</TD>
-<TD width=35% BGCOLOR=#FBF5EF>
-<B>Transmit enable: 0: disable transmitter, 1: enable transmitter, provided the TXDIS field is set to 0.</B>
-</TD>
-</TR>
-<TR valign="top">
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>RXDIS</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>3:3</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>8</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>0</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>0</B>
-</TD>
-<TD width=35% BGCOLOR=#FBF5EF>
-<B>Receive disable: 0: disable, 1: enable</B>
-</TD>
-</TR>
-<TR valign="top">
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>RXEN</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>2:2</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>4</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>1</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>4</B>
-</TD>
-<TD width=35% BGCOLOR=#FBF5EF>
-<B>Receive enable: 0: disable, 1: enable. When set to one, the receiver logic is enabled, provided the RXDIS field is set to zero.</B>
-</TD>
-</TR>
-<TR valign="top">
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>TXRES</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>1:1</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>2</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>1</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>2</B>
-</TD>
-<TD width=35% BGCOLOR=#FBF5EF>
-<B>Software reset for Tx data path: 0: 1: transmitter logic is reset and all pending transmitter data is discarded self clear</B>
-</TD>
-</TR>
-<TR valign="top">
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>RXRES</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>0:0</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>1</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>1</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>1</B>
-</TD>
-<TD width=35% BGCOLOR=#FBF5EF>
-<B>Software reset for Rx data path: 0: 1: receiver logic is reset and all pending receiver data is discarded self clear</B>
-</TD>
-</TR>
-<TR valign="top">
-<TD width=15% BGCOLOR=#C0C0C0>
-<B>Control_reg0@0XE0001000</B>
-</TD>
-<TD width=15% BGCOLOR=#C0C0C0>
-<B>31:0</B>
-</TD>
-<TD width=10% BGCOLOR=#C0C0C0>
-<B>1ff</B>
-</TD>
-<TD width=10% BGCOLOR=#C0C0C0>
-<B></B>
-</TD>
-<TD width=15% BGCOLOR=#C0C0C0>
-<B>17</B>
-</TD>
-<TD width=35% BGCOLOR=#C0C0C0>
-<B>UART Control register</B>
-</TD>
-</TR>
-</TABLE>
-<P>
-<H2><a name="mode_reg0">Register (<A href=#mod___slcr> slcr </A>)mode_reg0</a></H2>
-<TABLE border=1 cellspacing=0 BORDERCOLOR=black WIDTH=100%">
-<TR valign="top">
-<TD width=15% BGCOLOR=#FFFF00>
-<B>Register Name</B>
-</TD>
-<TD width=15% BGCOLOR=#FFFF00>
-<B>Address</B>
-</TD>
-<TD width=10% BGCOLOR=#FFFF00>
-<B>Width</B>
-</TD>
-<TD width=10% BGCOLOR=#FFFF00>
-<B>Type</B>
-</TD>
-<TD width=15% BGCOLOR=#FFFF00>
-<B>Reset Value</B>
-</TD>
-<TD width=35% BGCOLOR=#FFFF00>
-<B>Description</B>
-</TD>
-</TR>
-<TR valign="top">
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>mode_reg0</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>0XE0001004</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>32</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>rw</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>0x00000000</B>
-</TD>
-<TD width=35% BGCOLOR=#FBF5EF>
-<B>--</B>
-</TD>
-</TR>
-</TABLE>
-<P>
-<TABLE border=1 cellspacing=0 BORDERCOLOR=black WIDTH=100%">
-<TR valign="top">
-<TD width=15% BGCOLOR=#C0FFC0>
-<B>Field Name</B>
-</TD>
-<TD width=15% BGCOLOR=#C0FFC0>
-<B>Bits</B>
-</TD>
-<TD width=10% BGCOLOR=#C0FFC0>
-<B>Mask</B>
-</TD>
-<TD width=10% BGCOLOR=#C0FFC0>
-<B>Value</B>
-</TD>
-<TD width=15% BGCOLOR=#C0FFC0>
-<B>Shifted Value</B>
-</TD>
-<TD width=35% BGCOLOR=#C0FFC0>
-<B>Description</B>
-</TD>
-</TR>
-<TR valign="top">
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>IRMODE</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>11:11</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>800</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>0</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>0</B>
-</TD>
-<TD width=35% BGCOLOR=#FBF5EF>
-<B>Enable IrDA mode: 0: Default UART mode 1: Enable IrDA mode</B>
-</TD>
-</TR>
-<TR valign="top">
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>UCLKEN</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>10:10</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>400</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>0</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>0</B>
-</TD>
-<TD width=35% BGCOLOR=#FBF5EF>
-<B>External uart_clk source select: 0: APB clock, pclk 1: a user-defined clock</B>
-</TD>
-</TR>
-<TR valign="top">
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>CHMODE</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>9:8</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>300</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>0</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>0</B>
-</TD>
-<TD width=35% BGCOLOR=#FBF5EF>
-<B>Channel mode: 00: normal 01: automatic cho 10: local loopback 11: remote loopback</B>
-</TD>
-</TR>
-<TR valign="top">
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>NBSTOP</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>7:6</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>c0</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>0</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>0</B>
-</TD>
-<TD width=35% BGCOLOR=#FBF5EF>
-<B>Number of stop bits: 00: 1 stop bit 01: 1.5 stop bits 10: 2 stop bits 11: reserved</B>
-</TD>
-</TR>
-<TR valign="top">
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>PAR</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>5:3</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>38</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>4</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>20</B>
-</TD>
-<TD width=35% BGCOLOR=#FBF5EF>
-<B>Parity type select: 000: even parity 001: odd parity 010: forced to 0 parity (space) 011: forced to 1 parity (mark) 1xx: no parity</B>
-</TD>
-</TR>
-<TR valign="top">
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>CHRL</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>2:1</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>6</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>0</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>0</B>
-</TD>
-<TD width=35% BGCOLOR=#FBF5EF>
-<B>Character length select: 11: 6 bits 10: 7 bits 0x: 8 bits</B>
-</TD>
-</TR>
-<TR valign="top">
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>CLKS</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>0:0</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>1</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>0</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>0</B>
-</TD>
-<TD width=35% BGCOLOR=#FBF5EF>
-<B>Clock source select: 0: clock source is uart_clk 1: clock source is uart_clk/8</B>
-</TD>
-</TR>
-<TR valign="top">
-<TD width=15% BGCOLOR=#C0C0C0>
-<B>mode_reg0@0XE0001004</B>
-</TD>
-<TD width=15% BGCOLOR=#C0C0C0>
-<B>31:0</B>
-</TD>
-<TD width=10% BGCOLOR=#C0C0C0>
-<B>fff</B>
-</TD>
-<TD width=10% BGCOLOR=#C0C0C0>
-<B></B>
-</TD>
-<TD width=15% BGCOLOR=#C0C0C0>
-<B>20</B>
-</TD>
-<TD width=35% BGCOLOR=#C0C0C0>
-<B>UART Mode register</B>
-</TD>
-</TR>
-</TABLE>
-<P>
 <H2><a name="Baud_rate_divider_reg0">Register (<A href=#mod___slcr> slcr </A>)Baud_rate_divider_reg0</a></H2>
 <TABLE border=1 cellspacing=0 BORDERCOLOR=black WIDTH=100%">
 <TR valign="top">
@@ -103150,10 +101587,10 @@ SLCR_LOCK
 <B>2</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>1</B>
+<B>0</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>2</B>
+<B>0</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>UART 1 reference clock active. 0 - Clock is disabled. 1 - Clock is enabled.</B>
@@ -103213,7 +101650,7 @@ SLCR_LOCK
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>a03</B>
+<B>a01</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>UART Reference Clock Control</B>
@@ -103906,10 +102343,10 @@ SLCR_LOCK
 <B>30</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>0</B>
+<B>3</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>0</B>
+<B>30</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>Selects the source used to generate the clock. 0x - Source for generated clock is IO PLL. 10 - Source for generated clock is ARM PLL. 11 - Source for generated clock is DDR PLL.</B>
@@ -103926,10 +102363,10 @@ SLCR_LOCK
 <B>3f00</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>d</B>
+<B>7</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>d00</B>
+<B>700</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>Provides the divisor used to divide the source clock to generate the required generated clock frequency. First cascade divider</B>
@@ -103946,10 +102383,10 @@ SLCR_LOCK
 <B>3f00000</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>1</B>
+<B>2</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>100000</B>
+<B>200000</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>Provides the divisor used to divide the source clock to generate the required generated clock frequency. Second cascade divider</B>
@@ -103969,7 +102406,7 @@ SLCR_LOCK
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>100d00</B>
+<B>200730</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>FPGA 2 Output Clock Control</B>
@@ -104587,10 +103024,10 @@ SLCR_LOCK
 <B>200000</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>1</B>
+<B>0</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>200000</B>
+<B>0</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>UART 1 AMBA Clock active. 0 - Clock is disabled. 1 - Clock is enabled.</B>
@@ -104670,7 +103107,7 @@ SLCR_LOCK
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>1fc444d</B>
+<B>1dc444d</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>AMBA Peripheral Clock Control</B>
@@ -140811,94 +139248,6 @@ Baud_rate_divider_reg0
 </A>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>0XE0001034</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>32</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>RW</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>0x000000</B>
-</TD>
-<TD width=35% BGCOLOR=#FBF5EF>
-<B>baud rate divider register</B>
-</TD>
-</TR>
-<TR valign="top">
-<TD width=15% BGCOLOR=#FBF5EF>
-<A href="#Baud_rate_gen_reg0">
-Baud_rate_gen_reg0
-</A>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>0XE0001018</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>32</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>RW</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>0x000000</B>
-</TD>
-<TD width=35% BGCOLOR=#FBF5EF>
-<B>Baud rate divider register</B>
-</TD>
-</TR>
-<TR valign="top">
-<TD width=15% BGCOLOR=#FBF5EF>
-<A href="#Control_reg0">
-Control_reg0
-</A>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>0XE0001000</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>32</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>RW</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>0x000000</B>
-</TD>
-<TD width=35% BGCOLOR=#FBF5EF>
-<B>UART Control register</B>
-</TD>
-</TR>
-<TR valign="top">
-<TD width=15% BGCOLOR=#FBF5EF>
-<A href="#mode_reg0">
-mode_reg0
-</A>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>0XE0001004</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>32</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>RW</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>0x000000</B>
-</TD>
-<TD width=35% BGCOLOR=#FBF5EF>
-<B>UART Mode register</B>
-</TD>
-</TR>
-<TR valign="top">
-<TD width=15% BGCOLOR=#FBF5EF>
-<A href="#Baud_rate_divider_reg0">
-Baud_rate_divider_reg0
-</A>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
 <B>0XE0000034</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
@@ -141995,714 +140344,6 @@ MASK_DATA_0_LSW
 <P>
 <H1>SRAM/NOR SET OPMODE</H1>
 <H1>UART REGISTERS</H1>
-<H2><a name="Baud_rate_divider_reg0">Register (<A href=#mod___slcr> slcr </A>)Baud_rate_divider_reg0</a></H2>
-<TABLE border=1 cellspacing=0 BORDERCOLOR=black WIDTH=100%">
-<TR valign="top">
-<TD width=15% BGCOLOR=#FFFF00>
-<B>Register Name</B>
-</TD>
-<TD width=15% BGCOLOR=#FFFF00>
-<B>Address</B>
-</TD>
-<TD width=10% BGCOLOR=#FFFF00>
-<B>Width</B>
-</TD>
-<TD width=10% BGCOLOR=#FFFF00>
-<B>Type</B>
-</TD>
-<TD width=15% BGCOLOR=#FFFF00>
-<B>Reset Value</B>
-</TD>
-<TD width=35% BGCOLOR=#FFFF00>
-<B>Description</B>
-</TD>
-</TR>
-<TR valign="top">
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>Baud_rate_divider_reg0</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>0XE0001034</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>32</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>rw</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>0x00000000</B>
-</TD>
-<TD width=35% BGCOLOR=#FBF5EF>
-<B>--</B>
-</TD>
-</TR>
-</TABLE>
-<P>
-<TABLE border=1 cellspacing=0 BORDERCOLOR=black WIDTH=100%">
-<TR valign="top">
-<TD width=15% BGCOLOR=#C0FFC0>
-<B>Field Name</B>
-</TD>
-<TD width=15% BGCOLOR=#C0FFC0>
-<B>Bits</B>
-</TD>
-<TD width=10% BGCOLOR=#C0FFC0>
-<B>Mask</B>
-</TD>
-<TD width=10% BGCOLOR=#C0FFC0>
-<B>Value</B>
-</TD>
-<TD width=15% BGCOLOR=#C0FFC0>
-<B>Shifted Value</B>
-</TD>
-<TD width=35% BGCOLOR=#C0FFC0>
-<B>Description</B>
-</TD>
-</TR>
-<TR valign="top">
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>BDIV</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>7:0</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>ff</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>6</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>6</B>
-</TD>
-<TD width=35% BGCOLOR=#FBF5EF>
-<B>Baud rate divider value 0 - 3: ignored 4 - 255: Baud rate</B>
-</TD>
-</TR>
-<TR valign="top">
-<TD width=15% BGCOLOR=#C0C0C0>
-<B>Baud_rate_divider_reg0@0XE0001034</B>
-</TD>
-<TD width=15% BGCOLOR=#C0C0C0>
-<B>31:0</B>
-</TD>
-<TD width=10% BGCOLOR=#C0C0C0>
-<B>ff</B>
-</TD>
-<TD width=10% BGCOLOR=#C0C0C0>
-<B></B>
-</TD>
-<TD width=15% BGCOLOR=#C0C0C0>
-<B>6</B>
-</TD>
-<TD width=35% BGCOLOR=#C0C0C0>
-<B>baud rate divider register</B>
-</TD>
-</TR>
-</TABLE>
-<P>
-<H2><a name="Baud_rate_gen_reg0">Register (<A href=#mod___slcr> slcr </A>)Baud_rate_gen_reg0</a></H2>
-<TABLE border=1 cellspacing=0 BORDERCOLOR=black WIDTH=100%">
-<TR valign="top">
-<TD width=15% BGCOLOR=#FFFF00>
-<B>Register Name</B>
-</TD>
-<TD width=15% BGCOLOR=#FFFF00>
-<B>Address</B>
-</TD>
-<TD width=10% BGCOLOR=#FFFF00>
-<B>Width</B>
-</TD>
-<TD width=10% BGCOLOR=#FFFF00>
-<B>Type</B>
-</TD>
-<TD width=15% BGCOLOR=#FFFF00>
-<B>Reset Value</B>
-</TD>
-<TD width=35% BGCOLOR=#FFFF00>
-<B>Description</B>
-</TD>
-</TR>
-<TR valign="top">
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>Baud_rate_gen_reg0</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>0XE0001018</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>32</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>rw</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>0x00000000</B>
-</TD>
-<TD width=35% BGCOLOR=#FBF5EF>
-<B>--</B>
-</TD>
-</TR>
-</TABLE>
-<P>
-<TABLE border=1 cellspacing=0 BORDERCOLOR=black WIDTH=100%">
-<TR valign="top">
-<TD width=15% BGCOLOR=#C0FFC0>
-<B>Field Name</B>
-</TD>
-<TD width=15% BGCOLOR=#C0FFC0>
-<B>Bits</B>
-</TD>
-<TD width=10% BGCOLOR=#C0FFC0>
-<B>Mask</B>
-</TD>
-<TD width=10% BGCOLOR=#C0FFC0>
-<B>Value</B>
-</TD>
-<TD width=15% BGCOLOR=#C0FFC0>
-<B>Shifted Value</B>
-</TD>
-<TD width=35% BGCOLOR=#C0FFC0>
-<B>Description</B>
-</TD>
-</TR>
-<TR valign="top">
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>CD</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>15:0</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>ffff</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>7c</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>7c</B>
-</TD>
-<TD width=35% BGCOLOR=#FBF5EF>
-<B>Baud Rate Clock Divisor Value 0 = Disables baud_sample 1 = Clock divisor bypass 2 - 65535 = baud_sample value</B>
-</TD>
-</TR>
-<TR valign="top">
-<TD width=15% BGCOLOR=#C0C0C0>
-<B>Baud_rate_gen_reg0@0XE0001018</B>
-</TD>
-<TD width=15% BGCOLOR=#C0C0C0>
-<B>31:0</B>
-</TD>
-<TD width=10% BGCOLOR=#C0C0C0>
-<B>ffff</B>
-</TD>
-<TD width=10% BGCOLOR=#C0C0C0>
-<B></B>
-</TD>
-<TD width=15% BGCOLOR=#C0C0C0>
-<B>7c</B>
-</TD>
-<TD width=35% BGCOLOR=#C0C0C0>
-<B>Baud rate divider register</B>
-</TD>
-</TR>
-</TABLE>
-<P>
-<H2><a name="Control_reg0">Register (<A href=#mod___slcr> slcr </A>)Control_reg0</a></H2>
-<TABLE border=1 cellspacing=0 BORDERCOLOR=black WIDTH=100%">
-<TR valign="top">
-<TD width=15% BGCOLOR=#FFFF00>
-<B>Register Name</B>
-</TD>
-<TD width=15% BGCOLOR=#FFFF00>
-<B>Address</B>
-</TD>
-<TD width=10% BGCOLOR=#FFFF00>
-<B>Width</B>
-</TD>
-<TD width=10% BGCOLOR=#FFFF00>
-<B>Type</B>
-</TD>
-<TD width=15% BGCOLOR=#FFFF00>
-<B>Reset Value</B>
-</TD>
-<TD width=35% BGCOLOR=#FFFF00>
-<B>Description</B>
-</TD>
-</TR>
-<TR valign="top">
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>Control_reg0</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>0XE0001000</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>32</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>rw</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>0x00000000</B>
-</TD>
-<TD width=35% BGCOLOR=#FBF5EF>
-<B>--</B>
-</TD>
-</TR>
-</TABLE>
-<P>
-<TABLE border=1 cellspacing=0 BORDERCOLOR=black WIDTH=100%">
-<TR valign="top">
-<TD width=15% BGCOLOR=#C0FFC0>
-<B>Field Name</B>
-</TD>
-<TD width=15% BGCOLOR=#C0FFC0>
-<B>Bits</B>
-</TD>
-<TD width=10% BGCOLOR=#C0FFC0>
-<B>Mask</B>
-</TD>
-<TD width=10% BGCOLOR=#C0FFC0>
-<B>Value</B>
-</TD>
-<TD width=15% BGCOLOR=#C0FFC0>
-<B>Shifted Value</B>
-</TD>
-<TD width=35% BGCOLOR=#C0FFC0>
-<B>Description</B>
-</TD>
-</TR>
-<TR valign="top">
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>STPBRK</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>8:8</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>100</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>0</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>0</B>
-</TD>
-<TD width=35% BGCOLOR=#FBF5EF>
-<B>Stop transmitter break. 1 = stop transmission of the break.</B>
-</TD>
-</TR>
-<TR valign="top">
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>STTBRK</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>7:7</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>80</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>0</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>0</B>
-</TD>
-<TD width=35% BGCOLOR=#FBF5EF>
-<B>Start transmitter break 1 = start to transmit a break. Can only be set if STPBRK (Stop transmitter break) is not high.</B>
-</TD>
-</TR>
-<TR valign="top">
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>RSTTO</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>6:6</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>40</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>0</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>0</B>
-</TD>
-<TD width=35% BGCOLOR=#FBF5EF>
-<B>Restart receiver timeout counter 1 = receiver timeout counter is restarted</B>
-</TD>
-</TR>
-<TR valign="top">
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>TXDIS</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>5:5</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>20</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>0</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>0</B>
-</TD>
-<TD width=35% BGCOLOR=#FBF5EF>
-<B>Transmit disable. 1, the transmitter is disabled</B>
-</TD>
-</TR>
-<TR valign="top">
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>TXEN</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>4:4</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>10</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>1</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>10</B>
-</TD>
-<TD width=35% BGCOLOR=#FBF5EF>
-<B>Transmit enable. 1, the transmitter is enabled, provided the TXDIS field is set to 0.</B>
-</TD>
-</TR>
-<TR valign="top">
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>RXDIS</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>3:3</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>8</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>0</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>0</B>
-</TD>
-<TD width=35% BGCOLOR=#FBF5EF>
-<B>Receive disable. 1= receiver is enabled</B>
-</TD>
-</TR>
-<TR valign="top">
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>RXEN</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>2:2</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>4</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>1</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>4</B>
-</TD>
-<TD width=35% BGCOLOR=#FBF5EF>
-<B>Receive enable. 1=the receiver logic is enabled, provided RXDIS field is set to 0</B>
-</TD>
-</TR>
-<TR valign="top">
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>TXRES</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>1:1</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>2</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>1</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>2</B>
-</TD>
-<TD width=35% BGCOLOR=#FBF5EF>
-<B>Software reset for TX data path. 1=the transmitter logic is reset and all pending transmitter data is discarded self clear</B>
-</TD>
-</TR>
-<TR valign="top">
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>RXRES</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>0:0</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>1</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>1</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>1</B>
-</TD>
-<TD width=35% BGCOLOR=#FBF5EF>
-<B>Software reset for RX data path 1=receiver logic is reset and all pending receiver data is discarded self clear</B>
-</TD>
-</TR>
-<TR valign="top">
-<TD width=15% BGCOLOR=#C0C0C0>
-<B>Control_reg0@0XE0001000</B>
-</TD>
-<TD width=15% BGCOLOR=#C0C0C0>
-<B>31:0</B>
-</TD>
-<TD width=10% BGCOLOR=#C0C0C0>
-<B>1ff</B>
-</TD>
-<TD width=10% BGCOLOR=#C0C0C0>
-<B></B>
-</TD>
-<TD width=15% BGCOLOR=#C0C0C0>
-<B>17</B>
-</TD>
-<TD width=35% BGCOLOR=#C0C0C0>
-<B>UART Control register</B>
-</TD>
-</TR>
-</TABLE>
-<P>
-<H2><a name="mode_reg0">Register (<A href=#mod___slcr> slcr </A>)mode_reg0</a></H2>
-<TABLE border=1 cellspacing=0 BORDERCOLOR=black WIDTH=100%">
-<TR valign="top">
-<TD width=15% BGCOLOR=#FFFF00>
-<B>Register Name</B>
-</TD>
-<TD width=15% BGCOLOR=#FFFF00>
-<B>Address</B>
-</TD>
-<TD width=10% BGCOLOR=#FFFF00>
-<B>Width</B>
-</TD>
-<TD width=10% BGCOLOR=#FFFF00>
-<B>Type</B>
-</TD>
-<TD width=15% BGCOLOR=#FFFF00>
-<B>Reset Value</B>
-</TD>
-<TD width=35% BGCOLOR=#FFFF00>
-<B>Description</B>
-</TD>
-</TR>
-<TR valign="top">
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>mode_reg0</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>0XE0001004</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>32</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>rw</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>0x00000000</B>
-</TD>
-<TD width=35% BGCOLOR=#FBF5EF>
-<B>--</B>
-</TD>
-</TR>
-</TABLE>
-<P>
-<TABLE border=1 cellspacing=0 BORDERCOLOR=black WIDTH=100%">
-<TR valign="top">
-<TD width=15% BGCOLOR=#C0FFC0>
-<B>Field Name</B>
-</TD>
-<TD width=15% BGCOLOR=#C0FFC0>
-<B>Bits</B>
-</TD>
-<TD width=10% BGCOLOR=#C0FFC0>
-<B>Mask</B>
-</TD>
-<TD width=10% BGCOLOR=#C0FFC0>
-<B>Value</B>
-</TD>
-<TD width=15% BGCOLOR=#C0FFC0>
-<B>Shifted Value</B>
-</TD>
-<TD width=35% BGCOLOR=#C0FFC0>
-<B>Description</B>
-</TD>
-</TR>
-<TR valign="top">
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>IRMODE</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>11:11</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>800</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>0</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>0</B>
-</TD>
-<TD width=35% BGCOLOR=#FBF5EF>
-<B>Enable IrDA mode 0 : Default UART mode 1 : Enable IrDA mode</B>
-</TD>
-</TR>
-<TR valign="top">
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>UCLKEN</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>10:10</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>400</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>0</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>0</B>
-</TD>
-<TD width=35% BGCOLOR=#FBF5EF>
-<B>External uart_clk source select 0 : APB clock, pclk 1 : a user-defined clock</B>
-</TD>
-</TR>
-<TR valign="top">
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>CHMODE</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>9:8</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>300</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>0</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>0</B>
-</TD>
-<TD width=35% BGCOLOR=#FBF5EF>
-<B>Channel mode 00 = normal 01 = automatic cho 10 = local loopback 11 = remote loopback</B>
-</TD>
-</TR>
-<TR valign="top">
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>NBSTOP</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>7:6</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>c0</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>0</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>0</B>
-</TD>
-<TD width=35% BGCOLOR=#FBF5EF>
-<B>Number of stop bits 00 = 1 stop bit 01 = 1.5 stop bits 10 = 2 stop bits 11 = reserved</B>
-</TD>
-</TR>
-<TR valign="top">
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>PAR</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>5:3</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>38</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>4</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>20</B>
-</TD>
-<TD width=35% BGCOLOR=#FBF5EF>
-<B>Parity type select. 000 = even parity 001 = odd parity 010 = forced to 0 parity (space) 011 = forced to 1 parity (mark) 1xx = no parity</B>
-</TD>
-</TR>
-<TR valign="top">
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>CHRL</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>2:1</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>6</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>0</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>0</B>
-</TD>
-<TD width=35% BGCOLOR=#FBF5EF>
-<B>Character length select 11 = 6 bits 10 = 7 bits 01 / 00 = 8 bits</B>
-</TD>
-</TR>
-<TR valign="top">
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>CLKS</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>0:0</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>1</B>
-</TD>
-<TD width=10% BGCOLOR=#FBF5EF>
-<B>0</B>
-</TD>
-<TD width=15% BGCOLOR=#FBF5EF>
-<B>0</B>
-</TD>
-<TD width=35% BGCOLOR=#FBF5EF>
-<B>clock source select 1 = clock source is uart_clk/8 0 = clock source is uart_clk</B>
-</TD>
-</TR>
-<TR valign="top">
-<TD width=15% BGCOLOR=#C0C0C0>
-<B>mode_reg0@0XE0001004</B>
-</TD>
-<TD width=15% BGCOLOR=#C0C0C0>
-<B>31:0</B>
-</TD>
-<TD width=10% BGCOLOR=#C0C0C0>
-<B>fff</B>
-</TD>
-<TD width=10% BGCOLOR=#C0C0C0>
-<B></B>
-</TD>
-<TD width=15% BGCOLOR=#C0C0C0>
-<B>20</B>
-</TD>
-<TD width=35% BGCOLOR=#C0C0C0>
-<B>UART Mode register</B>
-</TD>
-</TR>
-</TABLE>
-<P>
 <H2><a name="Baud_rate_divider_reg0">Register (<A href=#mod___slcr> slcr </A>)Baud_rate_divider_reg0</a></H2>
 <TABLE border=1 cellspacing=0 BORDERCOLOR=black WIDTH=100%">
 <TR valign="top">

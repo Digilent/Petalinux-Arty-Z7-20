@@ -104,7 +104,7 @@
 			interrupt-parent = <0x4>;
 			interrupts = <0x0 0x14 0x4>;
 			reg = <0xe000a000 0x1000>;
-			emio-gpio-width = <0x6>;
+			emio-gpio-width = <0x40>;
 			gpio-mask-high = <0x0>;
 			gpio-mask-low = <0x5600>;
 			linux,phandle = <0x5>;
@@ -184,13 +184,11 @@
 
 		serial@e0001000 {
 			compatible = "xlnx,xuartps", "cdns,uart-r1p8";
-			status = "okay";
+			status = "disabled";
 			clocks = <0x1 0x18 0x1 0x29>;
 			clock-names = "uart_clk", "pclk";
 			reg = <0xe0001000 0x1000>;
 			interrupts = <0x0 0x32 0x4>;
-			device_type = "serial";
-			port-number = <0x1>;
 		};
 
 		spi@e0006000 {
@@ -303,7 +301,7 @@
 			enet-reset = <0x5 0x9 0x0>;
 			phy-mode = "rgmii-id";
 			xlnx,ptp-enet-clock = <0x6750918>;
-			local-mac-address = [00 18 3e 0a c5 fa];
+			local-mac-address;
 			phy-handle = <0x6>;
 
 			ethernet-phy@0 {
@@ -485,6 +483,13 @@
 		compatible = "simple-bus";
 		ranges;
 
+		PWM@43c40000 {
+			compatible = "xlnx,PWM-2.0";
+			reg = <0x43c40000 0x10000>;
+			xlnx,pwm-axi-addr-width = <0x7>;
+			xlnx,pwm-axi-data-width = <0x20>;
+		};
+
 		axi_dynclk@43c10000 {
 			compatible = "digilent,axi-dynclk";
 			reg = <0x43c10000 0x10000>;
@@ -550,25 +555,6 @@
 			xlnx,dout-default = <0x0>;
 			xlnx,dout-default-2 = <0x0>;
 			xlnx,gpio-width = <0xe>;
-			xlnx,gpio2-width = <0x20>;
-			xlnx,interrupt-present = <0x0>;
-			xlnx,is-dual = <0x0>;
-			xlnx,tri-default = <0xffffffff>;
-			xlnx,tri-default-2 = <0xffffffff>;
-		};
-
-		gpio@41240000 {
-			#gpio-cells = <0x2>;
-			compatible = "xlnx,xps-gpio-1.00.a";
-			gpio-controller;
-			reg = <0x41240000 0x10000>;
-			xlnx,all-inputs = <0x0>;
-			xlnx,all-inputs-2 = <0x0>;
-			xlnx,all-outputs = <0x0>;
-			xlnx,all-outputs-2 = <0x0>;
-			xlnx,dout-default = <0x0>;
-			xlnx,dout-default-2 = <0x0>;
-			xlnx,gpio-width = <0x10>;
 			xlnx,gpio2-width = <0x20>;
 			xlnx,interrupt-present = <0x0>;
 			xlnx,is-dual = <0x0>;
@@ -1016,7 +1002,6 @@
 	aliases {
 		ethernet0 = "/amba/ethernet@e000b000";
 		serial0 = "/amba/serial@e0000000";
-		serial1 = "/amba/serial@e0001000";
 		spi0 = "/amba/spi@e000d000";
 		spi1 = "/amba/spi@e0006000";
 	};

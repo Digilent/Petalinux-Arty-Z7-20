@@ -10,4 +10,5 @@ images/
 BOOT.BIN
 
 !pre-built/linux/images
+pre-built/linux/images/rootfs.ext4
 !project-spec/meta-user/recipes-core/images

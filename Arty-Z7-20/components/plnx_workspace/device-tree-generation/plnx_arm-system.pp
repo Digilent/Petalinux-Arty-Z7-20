@@ -21,7 +21,6 @@
  aliases {
   ethernet0 = &gem0;
   serial0 = &uart0;
-  serial1 = &uart1;
   spi0 = &qspi;
   spi1 = &spi0;
  };
@@ -41,7 +40,6 @@
  compatible = "digilent,zynq-artyz7", "xlnx,zynq-7000";
 
  chosen {
-
   bootargs = "console=ttyPS0,115200 earlyprintk uio_pdrv_genirq.of_id=generic-uio";
  };
 
@@ -180,4 +178,4 @@
 &uart0 {
  u-boot,dm-pre-reloc;
 };
-# 31 "/home/digilent/work/git/Petalinux-Arty-Z7-20/Arty-Z7-20/build/../components/plnx_workspace/device-tree-generation/system-top.dts" 2
+# 30 "/home/digilent/work/git/Petalinux-Arty-Z7-20/Arty-Z7-20/build/../components/plnx_workspace/device-tree-generation/system-top.dts" 2
