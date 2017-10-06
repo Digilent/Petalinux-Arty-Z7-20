@@ -1,29 +1,32 @@
 # Arty Z7-20 Petalinux BSP Project
 
-#### Warning: You should only use this repo when it is checked out on a release tag
-
 ## Built for Petalinux 2017.2
 
-## BSP Features:
+#### Warning: You should only use this repo when it is checked out on a release tag
+
+## BSP Features
 
 The project includes the following features by default:
 
 * Ethernet with Unique MAC address and DHCP support (see known issues)
+* USB Host support
+* UIO drivers for onboard switches, buttons and LEDs
 * SSH server
-* Build essentials package group, including gcc 
-* HDMI output with kernel mode setting (KMS) demo app
-* HDMI input via UIO drivers with passthrough demo app
-* RGB LED PWM drivers
-* LED, Switch, and button GPIO drivers
+* Build essentials package group for on-board compilation using gcc, etc. 
+* HDMI output with kernel mode setting (KMS)
+* HDMI input via UIO drivers
 
-## TODO:
+### Digilent Petalinux Apps (Coming Soon)
 
-* Add RDEPENDS to KMS demo app and test
-* Add HDMI input demo app
-* Finish features section of README, include Apps info
-* Review Quick-Start Guide
+The next releases of this project will contain demo apps for:
 
-## Known Issues:
+* Lightweight library and demo for changing the HDMI output resolution without an X server
+* HDMI input library for controlling the input video stream and a demo that passes it through
+  to HDMI output with zero-copy
+* UIO library and command line utility for controlling GPIO devices like onboard buttons, switches and LEDs
+* UIO library and demo for controlling the PWM IP core attached to the RGB LEDs.
+
+## Known Issues
 
 * The console on the attached monitor will shutdown and not resume if left inactive. This 
 * In order to meet timing, the input and output pipelines are clocked at a rate that will only support resolutions of around
@@ -40,15 +43,20 @@ The project includes the following features by default:
   our supported. For now just leave this as is until we have time to explore the effects of changing this value.
 * We have experienced issues with petalinux when it is not installed to /opt/pkg/petalinux/. Digilent highly recommends installing petalinux
   to that location on your system.
+* Netboot address and u-boot text address may need to be modified when using initramfs and rootfs is too large. The ramifications of this
+  need to be explored and notes should be added to this guide. If this is causing a problem, then u-boot will likely crash or not successfully
+  load the kernel
 
 ## Quick-Start Guide
 
 This guide will walk you through some basic steps to get you booted into Linux and rebuild the Petalinux project. After completing it, you should refer
-to the Petalinux Reference Guide (UG1144) from Xilinx to learn how to do more useful things with the Petalinux toolset. Also, refer to the Known Issues section above for a list of problems you may encounter and work arounds.
+to the Petalinux Reference Guide (UG1144) from Xilinx to learn how to do more useful things with the Petalinux toolset. Also, refer to the Known Issues 
+section above for a list of problems you may encounter and work arounds.
 
-This guide assumes you are using Ubuntu 16.04.3 LTS. Digilent highly recommends using Ubuntu 16.04.x LTS, as this is what we are most familiar with, and cannot guarantee that we will be able to replicate problems you encounter on other Linux distributions.
+This guide assumes you are using Ubuntu 16.04.3 LTS. Digilent highly recommends using Ubuntu 16.04.x LTS, as this is what we are most familiar with, and 
+cannot guarantee that we will be able to replicate problems you encounter on other Linux distributions.
 
-### To run the pre-built image from SD
+### Run the pre-built image from SD
 
 1. Obtain a microSD card that has its first partition formatted as a FAT filesystem.
 2. Copy _pre-built/linux/images/BOOT.BIN_ and _pre-built/linux/images/image.ub_ to the first partition of your SD card.
@@ -59,7 +67,7 @@ This guide assumes you are using Ubuntu 16.04.3 LTS. Digilent highly recommends 
 7. Optionally attach the Arty Z7 to a network using ethernet or an HDMI monitor.
 8. Press the PORB button to restart the Arty Z7. You should see the boot process at the terminal and eventually a root prompt.
 
-### To install the Petalinux tools
+### Install the Petalinux tools
 
 Digilent has put together this quick installation guide to make the petalinux installation process more convenient. Note it is only tested on Ubuntu 16.04.3 LTS. 
 
@@ -122,7 +130,7 @@ petalinux-create -t project -s <path to .bsp file>
 
 This will create a new petalinux project in your current working directory, which you should then _cd_ into.
 
-### To build the petalinux project:
+### Build the petalinux project:
 
 Run the following commands to build the petalinux project with the default options:
 
@@ -132,19 +140,24 @@ petalinux-build
 petalinux-package --boot --force --fsbl images/linux/zynq_fsbl.elf --fpga images/linux/Arty_Z7_20_wrapper.bit --u-boot
 ```
 
-### To boot the newly built files from SD: 
+### Boot the newly built files from SD: 
 
 Follow the same steps as done with the pre-built files, except use the BOOT.BIN and image.ub files found in _images/linux_.
 
-### To configure SD rootfs 
+### Configure SD rootfs 
 
-This project is initially configured to have the root file system (rootfs) existing in RAM. This configuration is referred to as "initramfs". A key aspect of this configuration is that changes made to the files (for example in your /home/root/ directory) will not
-persist after the board has been reset.
+This project is initially configured to have the root file system (rootfs) existing in RAM. This configuration is referred to as "initramfs". A key 
+aspect of this configuration is that changes made to the files (for example in your /home/root/ directory) will not persist after the board has been reset. 
+This may or may not be desirable functionality.
 
-If the root filesystem becomes too large (which is common if you add many features with "petalinux-config -c rootfs) then the system may experience poor performance (due to less available system memory) or not boot at all when configured as initramfs. 
+Another side affect of initramfs is that if the root filesystem becomes too large (which is common if you add many features with "petalinux-config -c rootfs)
+ then the system may experience poor performance (due to less available system memory). Also, if the uncompressed rootfs is larger than 128 MB, then booting
+ with initramfs will fail unless you make modifications to u-boot (see note at the end of the "Managing Image Size" section of UG1144).
 
-For those that want file modifications to persist through reboots, or that require a large rootfs, the petalinux system can be configured to instead use a filesystem that exists on the second partition of the microSD card. This will allow all 512 MiB of memory
-to be used as system memory, and for changes that are made to it to persist in non-volatile storage. To configure the system to use SD rootfs, write the generated root fs to the SD, and then boot the system, do the following:
+For those that want file modifications to persist through reboots, or that require a large rootfs, the petalinux system can be configured to instead use a 
+filesystem that exists on the second partition of the microSD card. This will allow all 512 MiB of memory to be used as system memory, and for changes that 
+are made to it to persist in non-volatile storage. To configure the system to use SD rootfs, write the generated root fs to the SD, and then boot the system, 
+do the following:
 
 Start by running petalinux-config and setting the following option to "SD":
 
@@ -152,14 +165,30 @@ Start by running petalinux-config and setting the following option to "SD":
  -> Image Packaging Configuration -> Root filesystem type
 ```
 
+Next, open project-spec/meta-user/recipes-bsp/device-tree/files/system-user.dtsi in a text editor and locate the "bootargs" line. It should read as follows:
+
+`
+		bootargs = "console=ttyPS0,115200 earlyprintk uio_pdrv_genirq.of_id=generic-uio";
+`
+
+Replace that line with the following before saving and closing system-user.dtsi:
+
+`
+		bootargs = "console=ttyPS0,115200 earlyprintk uio_pdrv_genirq.of_id=generic-uio root=/dev/mmcblk0p2 rw rootwait";
+`
+
+#### Note: If you wish to change back to initramfs in the future, you will need to undo this change to the bootargs line.
+
 Then run petalinux-build to build your system. After the build completes, your rootfs image will be at images/linux/rootfs.ext4.
 
-Format an SD card with two partitions: The first should be at least 500 MB and be FAT formatted. The second needs to be at least 1.5 GB (3 GB is preferred) and formatted as ext4. The second partition will be overwritten, so don't
-put anything on it that you don't want to lose. If you are uncertain how to do this in Ubuntu, gparted is a well documented tool that can make the process easy.
+Format an SD card with two partitions: The first should be at least 500 MB and be FAT formatted. The second needs to be at least 1.5 GB (3 GB is preferred) and 
+formatted as ext4. The second partition will be overwritten, so don't put anything on it that you don't want to lose. If you are uncertain how to do this in 
+Ubuntu, gparted is a well documented tool that can make the process easy.
 
 Copy _images/linux/BOOT.BIN_ and _images/linux/image.ub_ to the first partition of your SD card.
 
-Identify the /dev/ node for the second partition of your SD card using _lsblk_ at the command line. It will likely take the form of /dev/sdX2, where X is a _a_,_b_,_c_,etc.. Then run the following command to copy the filesystem to the second partition:
+Identify the /dev/ node for the second partition of your SD card using _lsblk_ at the command line. It will likely take the form of /dev/sdX2, where X is 
+_a_,_b_,_c_,etc.. Then run the following command to copy the filesystem to the second partition:
 
 #### Warning! If you use the wrong /dev/ node in the following command, you will overwrite your computer's file system. BE CAREFUL
 
@@ -180,7 +209,7 @@ Eject the SD card from your computer, then do the following:
 5. Optionally attach the Arty Z7 to a network using ethernet or an HDMI monitor.
 6. Press the PORB button to restart the Arty Z7. You should see the boot process at the terminal and eventually a root prompt.
 
-### To prepare for release:
+### Prepare for release:
 
 This section is only relevant for those who wish to upstream their work or version control their own project correctly on Github.
 Note the project should be released configured as initramfs for consistency, unless there is very good reason to release it with SD rootfs.
