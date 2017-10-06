@@ -1,5 +1,5 @@
-*/config.old
-*/rootfs_config.old
+*/*/config.old
+*/*/rootfs_config.old
 build/
 images/
 .petalinux/*
