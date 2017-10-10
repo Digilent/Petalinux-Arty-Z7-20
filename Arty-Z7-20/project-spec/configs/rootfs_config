@@ -4213,12 +4213,10 @@ CONFIG_bridge-utils=y
 #
 # CONFIG_gpio-demo is not set
 # CONFIG_peekpoke is not set
-# CONFIG_samplevrc is not set
 
 #
 # user packages 
 #
-# CONFIG_libvrcDemo is not set
 
 #
 # PetaLinux RootFS Settings

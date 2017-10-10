@@ -1,14 +1,12 @@
-*/*/config.old
-*/*/rootfs_config.old
-build/
-images/
-.petalinux/*
-!.petalinux/metadata
+/project-spec/configs/config.old
+/project-spec/configs/rootfs_config.old
+/build/
+/images/
+/.petalinux/*
+!/.petalinux/metadata
 *.o
 *.jou
 *.log
-BOOT.BIN
+/BOOT.BIN
+/pre-built/linux/images/rootfs.ext4
 
-!pre-built/linux/images
-pre-built/linux/images/rootfs.ext4
-!project-spec/meta-user/recipes-core/images
