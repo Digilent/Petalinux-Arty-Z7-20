@@ -217,7 +217,7 @@ Note the project should be released configured as initramfs for consistency, unl
 #### Warning: image.ub must be less than 100 MB, or github will break and the image likely won't work
 
 ```
-petalinux-package --prebuilt --clean --fpga images/linux/Arty_Z7_20_wrapper.bit -a images/linux/image.ub:images/image.ub -a images/linux/rootfs.ext4:images/rootfs.ext4
+petalinux-package --prebuilt --clean --fpga images/linux/Arty_Z7_20_wrapper.bit -a images/linux/image.ub:images/image.ub 
 petalinux-build -x distclean
 petalinux-build -x mrproper
 petalinux-package --bsp --force --output ../releases/Petalinux-Arty-Z7-20-SDSoC-20XX.X-X.bsp -p ./
