@@ -6,6 +6,8 @@
 
 ## BSP Features
 
+This petalinux project targets the Vivado block diagram project found here: https://github.com/Digilent/Arty-Z7-20-base-linux.
+
 The project includes the following features by default:
 
 * Ethernet with Unique MAC address and DHCP support (see known issues)
