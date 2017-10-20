@@ -63,7 +63,7 @@
 #define CONFIG_NET_MULTI
 #define CONFIG_BOOTP_MAY_FAIL
 #define CONFIG_NETCONSOLE	1
-#define CONFIG_SERVERIP	192.168.112.134
+#define CONFIG_SERVERIP	172.16.119.130
 #define CONFIG_IPADDR
 
 /* spi_flash - ps7_qspi_0 */
@@ -71,10 +71,6 @@
 #define CONFIG_SF_DEFAULT_SPEED	(XILINX_PS7_QSPI_CLK_FREQ_HZ / 4)
 #define CONFIG_SF_DUAL_FLASH
 #define CONFIG_SYS_NO_FLASH
-#define CONFIG_ENV_IS_IN_SPI_FLASH
-#define CONFIG_ENV_OFFSET	0x500000
-#define CONFIG_ENV_SIZE	0x20000
-#define CONFIG_ENV_SECT_SIZE	0x20000
 
 /* sdio - ps7_sd_0 */
 #define CONFIG_ZYNQ_SDHCI0	0xE0100000
@@ -168,9 +164,6 @@
 	"load_boot=tftpboot ${clobstart} ${boot_img}\0" \ 
 	"update_boot=setenv img boot; setenv psize ${bootsize}; setenv installcmd \"install_boot\"; run load_boot ${installcmd}; setenv img; setenv psize; setenv installcmd\0" \ 
 	"install_boot=mmcinfo && fatwrite mmc 0 ${clobstart} ${boot_img} ${filesize}\0" \ 
-	"bootenvsize=0x20000\0" \ 
-	"bootenvstart=0x500000\0" \ 
-	"eraseenv=sf probe 0 && sf erase ${bootenvstart} ${bootenvsize}\0" \ 
 	"jffs2_img=rootfs.jffs2\0" \ 
 	"load_jffs2=tftpboot ${clobstart} ${jffs2_img}\0" \ 
 	"update_jffs2=setenv img jffs2; setenv psize ${jffs2size}; setenv installcmd \"install_jffs2\"; run load_jffs2 test_img; setenv img; setenv psize; setenv installcmd\0" \ 

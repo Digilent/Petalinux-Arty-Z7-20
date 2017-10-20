@@ -232,7 +232,7 @@
 			u-boot,dm-pre-reloc;
 
 			flash@0 {
-				compatible = "s25fl128s";
+				compatible = "micron,m25p80", "s25fl128s", "spi-flash";
 				reg = <0x0>;
 				#address-cells = <0x1>;
 				#size-cells = <0x1>;
@@ -1019,11 +1019,5 @@
 		drv-vbus;
 		linux,phandle = <0x8>;
 		phandle = <0x8>;
-	};
-
-	pwm@0 {
-		compatible = "pwm-gpio";
-		#pwm-cells = <0x3>;
-		pwm-gpios = <0x5 0x36 0x1 0x5 0x37 0x1 0x5 0x38 0x1 0x5 0x39 0x1 0x5 0x3a 0x1 0x5 0x3b 0x1>;
 	};
 };

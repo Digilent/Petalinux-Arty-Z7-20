@@ -17,6 +17,8 @@ The project includes the following features by default:
 * Build essentials package group for on-board compilation using gcc, etc. 
 * HDMI output with kernel mode setting (KMS)
 * HDMI input via UIO drivers
+* U-boot environment variables can be overriden during SD boot by including uEnv.txt
+  in the root directory of the SD card (see u-boot documentation).
 
 ### Digilent Petalinux Apps (Coming Soon)
 
@@ -40,11 +42,6 @@ echo -e '\033[9;0]' > /dev/tty1
   resolutions this high (this is accomplished with a device tree property), however the input pipeline cannot do the same. If a
   resolution with a pixel clock greater than 118 MHz is provided on the input pipeline, then it will overflow and likely stop
   working. 
-* The MAC address is not currently being read out of the OTP region of Quad SPI flash. The MAC address should be manually
-  set by reading it from the sticker on the Arty Z7 and then running petalinux-config. The option to set the MAC address is:
-```
-  -> Subsystem AUTO Hardware Settings -> Ethernet Settings -> Ethernet MAC Address
-```
 * MACHINE_NAME is currently still set to "template". Not sure the ramifications of changing this, but I don't think our boards
   our supported. For now just leave this as is until we have time to explore the effects of changing this value.
 * We have experienced issues with petalinux when it is not installed to /opt/pkg/petalinux/. Digilent highly recommends installing petalinux

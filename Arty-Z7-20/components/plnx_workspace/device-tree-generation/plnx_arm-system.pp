@@ -51,17 +51,6 @@
   drv-vbus;
  };
 
- pwm: pwm@0 {
-  compatible = "pwm-gpio";
-  #pwm-cells = <3>;
-  pwm-gpios =
-   <&gpio0 54 1>,
-   <&gpio0 55 1>,
-   <&gpio0 56 1>,
-   <&gpio0 57 1>,
-   <&gpio0 58 1>,
-   <&gpio0 59 1>;
- };
 };
 
 &amba_pl {
@@ -118,7 +107,7 @@
 };
 
 &flash0 {
- compatible = "s25fl128s";
+ compatible = "micron,m25p80", "s25fl128s", "spi-flash";
 };
 
 &gem0 {
