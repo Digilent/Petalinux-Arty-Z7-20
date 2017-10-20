@@ -58146,8 +58146,8 @@ c093b44c T __initramfs_start
 c093b44c t __irf_start
 c093b44c T __security_initcall_end
 c093b44c T __security_initcall_start
-c093b4d2 t __irf_end
-c093b4d8 T __initramfs_size
+c093b4d0 T __initramfs_size
+c093b4d0 t __irf_end
 c093c000 D __per_cpu_load
 c093c000 D __per_cpu_start
 c093c000 d cpu_loops_per_jiffy
