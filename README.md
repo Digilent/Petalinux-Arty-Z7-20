@@ -30,7 +30,11 @@ The next releases of this project will contain demo apps for:
 
 ## Known Issues
 
-* The console on the attached monitor will shutdown and not resume if left inactive. This 
+* The console on the attached monitor will shutdown and not resume if left inactive. This can be prevented by running the following at 
+  a terminal after boot.
+```
+echo -e '\033[9;0]' > /dev/tty1
+```
 * In order to meet timing, the input and output pipelines are clocked at a rate that will only support resolutions of around
   118 MHz (potentially slightly more based on horizontal blanking intervals). The output pipeline will automatically reject
   resolutions this high (this is accomplished with a device tree property), however the input pipeline cannot do the same. If a
@@ -47,7 +51,9 @@ The next releases of this project will contain demo apps for:
   to that location on your system.
 * Netboot address and u-boot text address may need to be modified when using initramfs and rootfs is too large. The ramifications of this
   need to be explored and notes should be added to this guide. If this is causing a problem, then u-boot will likely crash or not successfully
-  load the kernel
+  load the kernel. The workaround for now is to use SD rootfs.
+* Ethernet PHY reset is not indicated correctly in the device tree. This means it will not be used by the linux and u-boot drivers. This does not
+  seem to be causing any known functionality issues. 
 
 ## Quick-Start Guide
 
@@ -132,7 +138,7 @@ petalinux-create -t project -s <path to .bsp file>
 
 This will create a new petalinux project in your current working directory, which you should then _cd_ into.
 
-### Build the petalinux project:
+### Build the petalinux project
 
 Run the following commands to build the petalinux project with the default options:
 
@@ -142,7 +148,7 @@ petalinux-build
 petalinux-package --boot --force --fsbl images/linux/zynq_fsbl.elf --fpga images/linux/Arty_Z7_20_wrapper.bit --u-boot
 ```
 
-### Boot the newly built files from SD: 
+### Boot the newly built files from SD 
 
 Follow the same steps as done with the pre-built files, except use the BOOT.BIN and image.ub files found in _images/linux_.
 
@@ -200,6 +206,15 @@ sudo dd if=images/linux/rootfs.ext4 of=/dev/sdX2
 sync
 ```
 
+The following commands will also stretch the file system so that you can use the additional space of your SD card. Be sure to replace the
+block device node as you did above, and also XG needs to be replaced with the size of the second partition on your SD card (so if your 
+2nd partition is 3 GiB, you should use 3G):
+
+```
+sudo resize2fs /dev/sdX2 XG
+sync
+```
+
 #### Note: It is possible to use a third party prebuilt rootfs (such as a Linaro Ubuntu image) instead of the petalinux generated rootfs. To do this, just copy the prebuilt image to the second partition instead of running the "dd" command above. Please direct questions on doing this to the Embedded linux section of the Digilent forum.
 
 Eject the SD card from your computer, then do the following:
@@ -211,7 +226,7 @@ Eject the SD card from your computer, then do the following:
 5. Optionally attach the Arty Z7 to a network using ethernet or an HDMI monitor.
 6. Press the PORB button to restart the Arty Z7. You should see the boot process at the terminal and eventually a root prompt.
 
-### Prepare for release:
+### Prepare for release
 
 This section is only relevant for those who wish to upstream their work or version control their own project correctly on Github.
 Note the project should be released configured as initramfs for consistency, unless there is very good reason to release it with SD rootfs.
@@ -222,7 +237,7 @@ Note the project should be released configured as initramfs for consistency, unl
 petalinux-package --prebuilt --clean --fpga images/linux/Arty_Z7_20_wrapper.bit -a images/linux/image.ub:images/image.ub 
 petalinux-build -x distclean
 petalinux-build -x mrproper
-petalinux-package --bsp --force --output ../releases/Petalinux-Arty-Z7-20-SDSoC-20XX.X-X.bsp -p ./
+petalinux-package --bsp --force --output ../releases/Petalinux-Arty-Z7-20-20XX.X-X.bsp -p ./
 ```
 Remove TMPDIR setting from project-spec/configs/config (this is done automatically for bsp project).
 ```
