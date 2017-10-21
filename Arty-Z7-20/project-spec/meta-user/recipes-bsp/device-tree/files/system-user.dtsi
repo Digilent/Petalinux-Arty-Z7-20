@@ -67,6 +67,22 @@
 	compatible = "generic-uio";	
 };
 
+&axi_gpio_led {
+	compatible = "generic-uio";
+};
+
+&axi_gpio_shield_1 {
+	compatible = "generic-uio";
+};
+
+&axi_gpio_sw {
+	compatible = "generic-uio";
+};
+
+&PWM_0 {
+	compatible = "generic-uio";
+};
+
 &qspi {
 	u-boot,dm-pre-reloc;
 };
