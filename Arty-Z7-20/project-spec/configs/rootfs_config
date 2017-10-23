@@ -4212,6 +4212,7 @@ CONFIG_bridge-utils=y
 # apps 
 #
 # CONFIG_gpio-demo is not set
+CONFIG_libuio=y
 # CONFIG_peekpoke is not set
 
 #
