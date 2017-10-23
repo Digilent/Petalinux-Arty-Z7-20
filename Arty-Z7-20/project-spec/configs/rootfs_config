@@ -4213,6 +4213,7 @@ CONFIG_bridge-utils=y
 #
 # CONFIG_gpio-demo is not set
 CONFIG_gpioutil=y
+CONFIG_kmsdemo=y
 # CONFIG_peekpoke is not set
 CONFIG_pwmdemo=y
 

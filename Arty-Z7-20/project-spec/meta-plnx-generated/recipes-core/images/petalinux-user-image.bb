@@ -24,6 +24,7 @@ IMAGE_INSTALL = "\
 		tcf-agent \
 		bridge-utils \
 		gpioutil \
+		kmsdemo \
 		pwmdemo \
 		libgpio \
 		libpwm \
