@@ -4212,13 +4212,14 @@ CONFIG_bridge-utils=y
 # apps 
 #
 # CONFIG_gpio-demo is not set
-CONFIG_libpwm=y
+CONFIG_libvrc=y
 # CONFIG_peekpoke is not set
 
 #
 # user packages 
 #
 CONFIG_libgpio=y
+CONFIG_libpwm=y
 CONFIG_libuio=y
 
 #
