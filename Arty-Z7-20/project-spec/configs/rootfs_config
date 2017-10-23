@@ -4212,12 +4212,13 @@ CONFIG_bridge-utils=y
 # apps 
 #
 # CONFIG_gpio-demo is not set
-CONFIG_libuio=y
+CONFIG_libgpio=y
 # CONFIG_peekpoke is not set
 
 #
 # user packages 
 #
+CONFIG_libuio=y
 
 #
 # PetaLinux RootFS Settings
