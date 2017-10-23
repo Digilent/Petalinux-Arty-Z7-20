@@ -23,6 +23,7 @@ IMAGE_INSTALL = "\
 		packagegroup-core-ssh-dropbear \
 		tcf-agent \
 		bridge-utils \
+		libpwm \
 		libgpio \
 		libuio \
 		"
