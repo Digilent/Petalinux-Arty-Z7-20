@@ -27,7 +27,7 @@ SOLIBS = ".so"
 
 
 RDEPENDS_${PN} = "glibc libuio"
-DEPENDS_${PN} = "glibc libuio"
+DEPENDS = "glibc libuio"
 
 
 S = "${WORKDIR}"

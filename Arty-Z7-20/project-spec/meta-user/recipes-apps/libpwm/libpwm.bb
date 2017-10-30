@@ -10,7 +10,7 @@ LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/MIT;md5=0835ade698e0bcf8506ecda
 FILESEXTRAPATHS_prepend := "${THISDIR}/files:"
 
 RDEPENDS_${PN} = "glibc libuio"
-DEPENDS_${PN} = "glibc libuio"
+DEPENDS = "glibc libuio"
 
 SRC_URI = "file://Makefile \
 	file://libpwm.c \
