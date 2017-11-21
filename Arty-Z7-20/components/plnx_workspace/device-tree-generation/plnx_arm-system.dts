@@ -484,7 +484,7 @@
 		ranges;
 
 		PWM@43c40000 {
-			compatible = "xlnx,PWM-2.0";
+			compatible = "generic-uio";
 			reg = <0x43c40000 0x10000>;
 			xlnx,pwm-axi-addr-width = <0x7>;
 			xlnx,pwm-axi-data-width = <0x20>;
@@ -526,7 +526,7 @@
 
 		gpio@41220000 {
 			#gpio-cells = <0x2>;
-			compatible = "xlnx,xps-gpio-1.00.a";
+			compatible = "generic-uio";
 			gpio-controller;
 			reg = <0x41220000 0x10000>;
 			xlnx,all-inputs = <0x0>;
@@ -545,7 +545,7 @@
 
 		gpio@41210000 {
 			#gpio-cells = <0x2>;
-			compatible = "xlnx,xps-gpio-1.00.a";
+			compatible = "generic-uio";
 			gpio-controller;
 			reg = <0x41210000 0x10000>;
 			xlnx,all-inputs = <0x0>;
@@ -565,7 +565,7 @@
 		gpio@41200000 {
 			#gpio-cells = <0x2>;
 			#interrupt-cells = <0x2>;
-			compatible = "xlnx,xps-gpio-1.00.a";
+			compatible = "generic-uio";
 			gpio-controller;
 			interrupt-controller;
 			interrupt-parent = <0x4>;

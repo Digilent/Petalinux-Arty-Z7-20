@@ -1,7 +1,7 @@
-# 1 "/home/digilent/work/git/Petalinux-Arty-Z7-20/Arty-Z7-20/build/../components/plnx_workspace/device-tree-generation/system-top.dts"
+# 1 "/home/mitchellorsucci/arty20/Petalinux-Arty-Z7-20/Arty-Z7-20/build/../components/plnx_workspace/device-tree-generation/system-top.dts"
 # 1 "<built-in>"
 # 1 "<command-line>"
-# 1 "/home/digilent/work/git/Petalinux-Arty-Z7-20/Arty-Z7-20/build/../components/plnx_workspace/device-tree-generation/system-top.dts"
+# 1 "/home/mitchellorsucci/arty20/Petalinux-Arty-Z7-20/Arty-Z7-20/build/../components/plnx_workspace/device-tree-generation/system-top.dts"
 
 
 
@@ -31,10 +31,10 @@
  cpus {
  };
 };
-# 1 "/home/digilent/work/git/Petalinux-Arty-Z7-20/Arty-Z7-20/build/tmp/work/plnx_arm-xilinx-linux-gnueabi/device-tree-generation/xilinx+gitAUTOINC+43551819a1-r0/system-user.dtsi" 1
+# 1 "/home/mitchellorsucci/Petalinux-Arty-Z7-20/Arty-Z7-20/build/tmp/work/plnx_arm-xilinx-linux-gnueabi/device-tree-generation/xilinx+gitAUTOINC+43551819a1-r0/system-user.dtsi" 1
 /include/ "system-conf.dtsi"
-# 1 "/home/digilent/work/git/Petalinux-Arty-Z7-20/Arty-Z7-20/build/tmp/work-shared/plnx_arm/kernel-source/include/dt-bindings/gpio/gpio.h" 1
-# 3 "/home/digilent/work/git/Petalinux-Arty-Z7-20/Arty-Z7-20/build/tmp/work/plnx_arm-xilinx-linux-gnueabi/device-tree-generation/xilinx+gitAUTOINC+43551819a1-r0/system-user.dtsi" 2
+# 1 "/home/mitchellorsucci/Petalinux-Arty-Z7-20/Arty-Z7-20/build/tmp/work-shared/plnx_arm/kernel-source/include/dt-bindings/gpio/gpio.h" 1
+# 3 "/home/mitchellorsucci/Petalinux-Arty-Z7-20/Arty-Z7-20/build/tmp/work/plnx_arm-xilinx-linux-gnueabi/device-tree-generation/xilinx+gitAUTOINC+43551819a1-r0/system-user.dtsi" 2
 / {
  model = "Zynq Arty Z7 Development Board";
  compatible = "digilent,zynq-artyz7", "xlnx,zynq-7000";
@@ -99,6 +99,22 @@
  compatible = "generic-uio";
 };
 &axi_gpio_video {
+ compatible = "generic-uio";
+};
+
+&axi_gpio_led {
+ compatible = "generic-uio";
+};
+
+&axi_gpio_shield_1 {
+ compatible = "generic-uio";
+};
+
+&axi_gpio_sw {
+ compatible = "generic-uio";
+};
+
+&PWM_0 {
  compatible = "generic-uio";
 };
 
@@ -167,4 +183,4 @@
 &uart0 {
  u-boot,dm-pre-reloc;
 };
-# 30 "/home/digilent/work/git/Petalinux-Arty-Z7-20/Arty-Z7-20/build/../components/plnx_workspace/device-tree-generation/system-top.dts" 2
+# 30 "/home/mitchellorsucci/arty20/Petalinux-Arty-Z7-20/Arty-Z7-20/build/../components/plnx_workspace/device-tree-generation/system-top.dts" 2

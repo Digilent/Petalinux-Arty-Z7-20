@@ -15,7 +15,7 @@ src/nand.o src/nand.o: ../src/nand.c \
  ../../fsbl_bsp/ps7_cortexa9_0/include/xil_io.h \
  ../../fsbl_bsp/ps7_cortexa9_0/include/xstatus.h \
  ../../fsbl_bsp/ps7_cortexa9_0/include/xil_assert.h ../src/fsbl_debug.h \
- /home/digilent/work/git/Petalinux-Arty-Z7-20/Arty-Z7-20/components/plnx_workspace/fsbl_hwproj/ps7_init.h
+ /home/mitchellorsucci/arty20/Petalinux-Arty-Z7-20/Arty-Z7-20/components/plnx_workspace/fsbl_hwproj/ps7_init.h
 
 ../../fsbl_bsp/ps7_cortexa9_0/include/xparameters.h:
 
@@ -55,4 +55,4 @@ src/nand.o src/nand.o: ../src/nand.c \
 
 ../src/fsbl_debug.h:
 
-/home/digilent/work/git/Petalinux-Arty-Z7-20/Arty-Z7-20/components/plnx_workspace/fsbl_hwproj/ps7_init.h:
+/home/mitchellorsucci/arty20/Petalinux-Arty-Z7-20/Arty-Z7-20/components/plnx_workspace/fsbl_hwproj/ps7_init.h:
