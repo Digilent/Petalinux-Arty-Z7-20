@@ -102,6 +102,7 @@
 
 &usb0 {	
 	usb-phy = <&usb_phy0>;
+	dr_mode = "host";
 	/delete-property/ usb-reset;
 };
 
