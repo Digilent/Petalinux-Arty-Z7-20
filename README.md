@@ -70,7 +70,7 @@ First install the needed dependencies by opening a terminal and running the foll
 
 ```
 sudo -s
-apt-get install tofrodos gawk xvfb git libncurses5-dev tftpd zlib1g-dev zlib1g-dev:i386  \
+apt-get install tofrodos gawk xvfb git libncurses5-dev zlib1g-dev zlib1g-dev:i386  \
                 libssl-dev flex bison chrpath socat autoconf libtool texinfo gcc-multilib \
                 libsdl1.2-dev libglib2.0-dev screen pax 
 reboot
